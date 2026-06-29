@@ -1,519 +1,69 @@
-// ======================================
-// RAÍZ - SCRIPT.JS 2.0
-// ======================================
+/*==================================================
+                RAÍZ
+                script.js
+==================================================*/
 
+"use strict";
 
-
-// ======================================
-// MENÚ HAMBURGUESA
-// ======================================
-
-const menuToggle = document.querySelector(".menu-toggle");
-const mobileMenu = document.querySelector(".mobile-menu");
-
-if(menuToggle){
-
-    menuToggle.addEventListener("click", () => {
-
-        mobileMenu.classList.toggle("active");
-
-    });
-
-}
-
-
-
-// cerrar menú al tocar un link
-
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        mobileMenu.classList.remove("active");
-
-    });
-
-});
-
-
-
-// ======================================
-// HEADER SCROLL
-// ======================================
+/*==================================================
+                SELECTORES
+==================================================*/
 
 const header = document.querySelector(".header");
 
-window.addEventListener("scroll", () => {
+const scrollIndicator = document.querySelector(".scroll-indicator");
 
-    if(window.scrollY > 80){
+const hero = document.querySelector(".hero");
+
+const layer1 = document.querySelector(".layer-1");
+
+const layer2 = document.querySelector(".layer-2");
+
+const layer3 = document.querySelector(".layer-3");
+
+
+
+/*==================================================
+            HEADER SCROLL
+==================================================*/
+
+function headerScroll(){
+
+    if(window.scrollY > 40){
 
         header.classList.add("scrolled");
 
-    }else{
+    }
+
+    else{
 
         header.classList.remove("scrolled");
 
     }
 
-});
-
-
-
-// ======================================
-// SCROLL REVEAL
-// ======================================
-
-const revealElements =
-document.querySelectorAll(".reveal");
-
-const revealObserver =
-new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("active");
-
-        }
-
-    });
-
-},{
-    threshold:0.15
-});
-
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-
-// ======================================
-// FAQ
-// ======================================
-
-const faqItems =
-document.querySelectorAll(".faq-item");
-
-faqItems.forEach(item => {
-
-    const question =
-    item.querySelector(".faq-question");
-
-    const answer =
-    item.querySelector(".faq-answer");
-
-    question.addEventListener("click", () => {
-
-        const isOpen =
-        item.classList.contains("active");
-
-        faqItems.forEach(faq => {
-
-            faq.classList.remove("active");
-
-            faq.querySelector(".faq-answer")
-            .style.maxHeight = null;
-
-        });
-
-        if(!isOpen){
-
-            item.classList.add("active");
-
-            answer.style.maxHeight =
-            answer.scrollHeight + "px";
-
-        }
-
-    });
-
-});
-
-
-
-// ======================================
-// DATOS OBRAS
-// ======================================
-
-const obras = [
-
-    {
-        titulo:"Silla Kyoto",
-        descripcion:"Restauración integral con tapizado Asanoha.",
-        original:"imagenes/muebles/viejos/silla_viejo.png",
-        restaurada:"imagenes/muebles/nuevos/silla_nuevo.png"
-    },
-
-    {
-        titulo:"Lámpara Akari",
-        descripcion:"Recuperación y rediseño contemporáneo.",
-        original:"imagenes/muebles/viejos/lampara_viejo.png",
-        restaurada:"imagenes/muebles/nuevos/lampara_nuevo.png"
-    },
-
-    {
-        titulo:"Mesa Nagoya",
-        descripcion:"Madera recuperada y acabado premium.",
-        original:"imagenes/muebles/viejos/mesa_alta_viejo.png",
-        restaurada:"imagenes/muebles/nuevos/mesa_alta_nuevo.png"
-    },
-
-    {
-        titulo:"Armario Fuji",
-        descripcion:"Diagnóstico estructural completo.",
-        original:"imagenes/muebles/viejos/armario_viejo.png",
-        restaurada:"imagenes/muebles/nuevos/armario_nuevo.png"
-    },
-
-    {
-        titulo:"Sillón Sakura",
-        descripcion:"Tapizados japoneses personalizados.",
-        original:"imagenes/muebles/viejos/silla_viejo.png",
-        restaurada:"imagenes/muebles/nuevos/silla_nuevo.png"
-    },
-
-    {
-        titulo:"Cómoda Hikari",
-        descripcion:"Nueva identidad visual.",
-        original:"imagenes/muebles/viejos/mesita_viejo.png",
-        restaurada:"imagenes/muebles/nuevos/mesita_nuevo.png"
-    },
-
-    {
-        titulo:"Mesa Zen",
-        descripcion:"Proceso integral de restauración.",
-        original:"imagenes/muebles/viejos/mesa_baja_viejo.png",
-        restaurada:"imagenes/muebles/nuevos/mesa_baja_nuevo.png"
-    }
-
-];
-
-
-
-// ======================================
-// CARRUSEL OBRAS
-// ======================================
-
-const obrasTrack =
-document.getElementById("obras-track");
-
-let currentIndex = 2;
-
-
-
-function renderObras(){
-
-    if(!obrasTrack) return;
-
-    obrasTrack.style.opacity = 0;
-
-    setTimeout(() => {
-
-        obrasTrack.innerHTML = "";
-
-        const indicators =
-        document.getElementById("obras-indicators");
-        
-        if(indicators){
-            
-        indicators.innerHTML = "";
-
-    obras.forEach((_, index) => {
-
-        const dot =
-        document.createElement("div");
-
-        dot.classList.add("obra-dot");
-
-        if(index === currentIndex){
-
-            dot.classList.add("active");
-        }
-
-        indicators.appendChild(dot);
-
-    });
-
 }
 
-        const total = obras.length;
+window.addEventListener("scroll", headerScroll);
 
-        const positions = [-2,-1,0,1,2];
+headerScroll();
 
 
 
-        positions.forEach(position => {
 
-            const index =
-            (currentIndex + position + total)
-            % total;
 
-            const obra = obras[index];
+/*==================================================
+        BOTÓN SCROLL HERO
+==================================================*/
 
-            const card =
-            document.createElement("div");
+if(scrollIndicator){
 
+    scrollIndicator.addEventListener("click", () => {
 
+        const nextSection = hero.nextElementSibling;
 
-            if(position === 0){
+        if(nextSection){
 
-                card.className =
-                "obra-card center";
-
-            }else if(Math.abs(position) === 1){
-
-                card.className =
-                "obra-card side";
-
-            }else{
-
-                card.className =
-                "obra-card side-far";
-            }
-
-
-
-            const image =
-            position === 0
-            ? obra.restaurada
-            : obra.original;
-
-
-
-            card.innerHTML = `
-
-                <img
-                class="obra-image"
-                src="${image}"
-                alt="${obra.titulo}">
-
-                <div class="obra-info">
-
-                    <h3>${obra.titulo}</h3>
-
-                    <p>${obra.descripcion}</p>
-
-                </div>
-
-            `;
-
-
-
-            card.addEventListener("click", () => {
-
-                currentIndex = index;
-
-                renderObras();
-
-            });
-
-            obrasTrack.appendChild(card);
-
-        });
-
-
-        obrasTrack.style.opacity = 1;
-
-    },200);
-
-}
-
-renderObras();
-
-
-
-// ======================================
-// SWIPE MÓVIL
-// ======================================
-
-let startX = 0;
-let endX = 0;
-
-if(obrasTrack){
-
-    obrasTrack.addEventListener("touchstart", e => {
-
-        startX =
-        e.changedTouches[0].screenX;
-
-    });
-
-    obrasTrack.addEventListener("touchend", e => {
-
-        endX =
-        e.changedTouches[0].screenX;
-
-        handleSwipe();
-
-    });
-
-}
-
-
-
-function handleSwipe(){
-
-    if(startX - endX > 50){
-
-        currentIndex =
-        (currentIndex + 1)
-        % obras.length;
-
-        renderObras();
-    }
-
-    if(endX - startX > 50){
-
-        currentIndex =
-        (currentIndex - 1 + obras.length)
-        % obras.length;
-
-        renderObras();
-    }
-
-}
-
-
-
-// ======================================
-// PERSONALIZACIÓN
-// ======================================
-
-const preview =
-document.querySelector(".large-image");
-
-const infoTitle =
-document.querySelector(".personalizacion-info h4");
-
-const infoText =
-document.querySelector(".personalizacion-info p");
-
-
-
-const configuraciones = {
-
-    rojo:{
-
-        titulo:"Vitalidad ancestral",
-
-        texto:"Madera oscura y detalles rojos.",
-
-        imagen:"imagenes/muebles/rojo/silla_roja_1.png"
-    },
-
-    azul:{
-
-        titulo:"Horizonte sereno",
-
-        texto:"Crema, azul y equilibrio.",
-
-        imagen:"imagenes/muebles/azul/silla_azul_1.png"
-        
-    },
-
-    dorado:{
-
-        titulo:"Sobriedad imperial",
-
-        texto:"Negro y dorado premium.",
-
-        imagen:"imagenes/muebles/dorado/silla_dorado_1.png"
-    }
-
-};
-
-
-
-document.querySelectorAll(".color-option")
-.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        document
-        .querySelectorAll(".color-option")
-        .forEach(btn =>
-            btn.classList.remove("active")
-        );
-
-        button.classList.add("active");
-
-        const key =
-        button.dataset.color;
-
-        const data =
-        configuraciones[key];
-
-        if(!data) return;
-
-        infoTitle.textContent =
-        data.titulo;
-
-        infoText.textContent =
-        data.texto;
-
-        preview.style.opacity = 0;
-
-        setTimeout(() => {
-
-            preview.innerHTML = `
-                <img src="${data.imagen}" alt="">
-            `;
-
-            preview.style.opacity = 1;
-
-        },200);
-
-    });
-
-});
-
-
-
-// ======================================
-// HERO PARALLAX
-// ======================================
-
-const hero =
-document.querySelector(".hero");
-
-window.addEventListener("scroll", () => {
-
-    if(!hero) return;
-
-    const scroll =
-    window.pageYOffset;
-
-    hero.style.backgroundPositionY =
-    scroll * 0.35 + "px";
-
-});
-
-
-
-// ======================================
-// SCROLL SUAVE LINKS
-// ======================================
-
-document
-.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
-
-    anchor.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        const target =
-        document.querySelector(
-            this.getAttribute("href")
-        );
-
-        if(target){
-
-            target.scrollIntoView({
+            nextSection.scrollIntoView({
 
                 behavior:"smooth"
 
@@ -523,30 +73,435 @@ document
 
     });
 
+}
+
+
+
+
+
+/*==================================================
+            PARALLAX HERO
+==================================================*/
+
+function heroParallax(){
+
+    const scroll = window.scrollY;
+
+    if(!hero) return;
+
+    if(scroll > hero.offsetHeight){
+
+        return;
+
+    }
+
+    layer1.style.transform =
+        `translateY(${scroll * 0.18}px) translateX(${scroll * 0.05}px)`;
+
+    layer2.style.transform =
+        `translateY(${scroll * -0.12}px) translateX(${scroll * -0.08}px)`;
+
+    layer3.style.transform =
+        `translateY(${scroll * 0.28}px) translateX(${scroll * -0.04}px)`;
+
+}
+
+window.addEventListener("scroll", heroParallax);
+
+heroParallax();
+
+/*==================================================
+            REVEAL ON SCROLL
+==================================================*/
+
+/*
+    Todos los elementos que tengan la clase
+    .reveal aparecerán al entrar en pantalla.
+
+    Ejemplo:
+
+    <div class="concept-card reveal"></div>
+
+*/
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+
+        threshold:0.15,
+
+        rootMargin:"0px 0px -80px 0px"
+
+    }
+
+);
+
+revealElements.forEach((element)=>{
+
+    revealObserver.observe(element);
+
 });
 
-// ======================================
-// DRAG CON MOUSE
-// ======================================
 
-let mouseStartX = 0;
-let mouseEndX = 0;
 
-if(obrasTrack){
 
-    obrasTrack.addEventListener("mousedown", e => {
 
-        mouseStartX = e.clientX;
+/*==================================================
+        REVEAL ESCALONADO
+==================================================*/
+
+/*
+
+Permite que las tarjetas aparezcan
+una detrás de otra.
+
+*/
+
+const revealGroups = [
+
+    ".concept-card",
+
+    ".work-card",
+
+    ".custom-card",
+
+    ".gallery-item",
+
+    ".course-card",
+
+    ".faq-item"
+
+];
+
+revealGroups.forEach((selector)=>{
+
+    const items = document.querySelectorAll(selector);
+
+    items.forEach((item,index)=>{
+
+        item.style.transitionDelay = `${index * 0.12}s`;
 
     });
 
+});
+
+/*==================================================
+                    OBRAS
+==================================================*/
+
+const workCards = document.querySelectorAll(".work-card");
 
 
-    obrasTrack.addEventListener("mouseup", e => {
 
-        mouseEndX = e.clientX;
+/*==================================================
+                FLIP
+==================================================*/
 
-        handleMouseDrag();
+workCards.forEach(card => {
+
+    card.addEventListener("click", e => {
+
+        if(e.target.closest(".button")) return;
+
+        workCards.forEach(otherCard => {
+
+            if(otherCard !== card){
+
+                otherCard.classList.remove("flipped");
+
+            }
+
+        });
+
+        card.classList.toggle("flipped");
+
+    });
+
+});
+
+/*==================================================
+        CAMBIO DE IMAGEN EN HOVER
+==================================================*/
+
+workCards.forEach(card => {
+
+    const oldImage = card.querySelector(".image-old");
+    const newImage = card.querySelector(".image-new");
+
+    card.addEventListener("mouseenter",()=>{
+
+        oldImage.style.opacity="0";
+        newImage.style.opacity="1";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+    if(card.classList.contains("flipped")) return;
+
+    oldImage.style.opacity="1";
+
+    newImage.style.opacity="0";
+
+    });
+
+});
+
+/*==================================================
+            RESET IMAGEN
+==================================================*/
+
+document.addEventListener("click",e=>{
+
+    workCards.forEach(card=>{
+
+        if(card.contains(e.target)) return;
+
+        card.classList.remove("flipped");
+
+        const oldImage=card.querySelector(".image-old");
+        const newImage=card.querySelector(".image-new");
+
+        oldImage.style.opacity="1";
+        newImage.style.opacity="0";
+
+    });
+
+});
+
+/*==================================================
+            PERSONALIZACIÓN
+==================================================*/
+
+const productImage =
+    document.querySelector(".product-image");
+
+const colorButtons =
+    document.querySelectorAll(".color-btn");
+
+const customCards =
+    document.querySelectorAll(".custom-card");
+
+
+
+
+
+/*==================================================
+                DATOS
+==================================================*/
+
+const customizationData = {
+
+    blue:{
+
+        image:"imagenes/muebles/azul/silla_azul_1.png",
+
+        cards:[
+
+            {
+
+                title:"Madera Natural",
+
+                text:"Terminación mate que conserva la textura y la esencia de la madera."
+
+            },
+
+            {
+
+                title:"Azul Índigo",
+
+                text:"Inspirado en los tonos tradicionales japoneses para transmitir calma y profundidad."
+
+            },
+
+            {
+
+                title:"Patrón Kikkō",
+
+                text:"Símbolo de longevidad y equilibrio dentro de la cultura japonesa."
+
+            },
+
+            {
+
+                title:"Serenidad",
+
+                text:"Una pieza pensada para transmitir equilibrio, calma y elegancia."
+
+            }
+
+        ]
+
+    },
+
+
+
+
+
+    red:{
+
+        image:"imagenes/muebles/rojo/silla_roja_1.png",
+
+        cards:[
+
+            {
+
+                title:"Roble claro",
+
+                text:"Acabado suave que resalta la luminosidad natural de la madera."
+
+            },
+
+            {
+
+                title:"Rojo Carmesí",
+
+                text:"Inspirado en los tradicionales torii japoneses."
+
+            },
+
+            {
+
+                title:"Patrón Asanoha",
+
+                text:"Representa crecimiento, fuerza y prosperidad."
+
+            },
+
+            {
+
+                title:"Carácter",
+
+                text:"Una combinación intensa que transmite energía y presencia."
+
+            }
+
+        ]
+
+    },
+
+
+
+
+
+    gold:{
+
+        image:"imagenes/muebles/dorado/silla_dorado_1.png",
+
+        cards:[
+
+            {
+
+                title:"Nogal Oscuro",
+
+                text:"La veta natural adquiere mayor protagonismo gracias al acabado profundo."
+
+            },
+
+            {
+
+                title:"Dorado Arena",
+
+                text:"Una paleta cálida inspirada en la naturaleza japonesa."
+
+            },
+
+            {
+
+                title:"Patrón Seigaiha",
+
+                text:"Las olas representan tranquilidad, continuidad y buena fortuna."
+
+            },
+
+            {
+
+                title:"Armonía",
+
+                text:"Un diseño cálido que busca generar paz y equilibrio visual."
+
+            }
+
+        ]
+
+    }
+
+};
+
+
+
+
+
+/*==================================================
+            ACTUALIZAR PRODUCTO
+==================================================*/
+
+function updateCustomization(color){
+
+    const colors={
+
+blue:"rgba(50,93,155,.12)",
+
+red:"rgba(166,61,64,.12)",
+
+gold:"rgba(176,138,74,.12)"
+
+};
+
+document.documentElement.style
+.setProperty(
+
+"--circle-color",
+
+colors[color]
+
+);
+
+    const data = customizationData[color];
+
+    if(!data) return;
+
+
+
+
+
+    productImage.src = data.image;
+
+
+
+
+
+    customCards.forEach((card,index)=>{
+
+        const title =
+            card.querySelector(".custom-card-title");
+
+        const text =
+            card.querySelector(".custom-card-text");
+
+        title.textContent =
+            data.cards[index].title;
+
+        text.textContent =
+            data.cards[index].text;
 
     });
 
@@ -554,27 +509,190 @@ if(obrasTrack){
 
 
 
-function handleMouseDrag(){
 
-    if(mouseStartX - mouseEndX > 50){
 
-        currentIndex =
-        (currentIndex + 1)
-        % obras.length;
+/*==================================================
+            BOTONES
+==================================================*/
 
-        renderObras();
+colorButtons.forEach((button)=>{
+
+    button.addEventListener("click",()=>{
+
+        colorButtons.forEach((btn)=>{
+
+            btn.classList.remove("active");
+
+        });
+
+
+
+
+
+        button.classList.add("active");
+
+
+
+
+
+        updateCustomization(
+
+            button.dataset.color
+
+        );
+
+    });
+
+});
+
+
+
+
+
+/*==================================================
+                INICIO
+==================================================*/
+
+updateCustomization("blue");
+
+/*==================================================
+                    FAQ
+==================================================*/
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+
+
+
+
+/*==================================================
+            ACORDEÓN
+==================================================*/
+
+faqItems.forEach((item)=>{
+
+    const button =
+        item.querySelector(".faq-question");
+
+    button.addEventListener("click",()=>{
+
+        const isActive =
+            item.classList.contains("active");
+
+
+
+
+
+        /*------------------------------------------
+            CERRAR TODOS
+        ------------------------------------------*/
+
+        faqItems.forEach((faq)=>{
+
+            faq.classList.remove("active");
+
+        });
+
+
+
+
+
+        /*------------------------------------------
+            ABRIR EL SELECCIONADO
+        ------------------------------------------*/
+
+        if(!isActive){
+
+            item.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/*==================================================
+                INICIALIZACIÓN
+==================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    console.log("RAÍZ iniciado correctamente.");
+
+});
+
+
+
+
+
+/*==================================================
+                RESIZE
+==================================================*/
+
+window.addEventListener("resize", () => {
+
+    heroParallax();
+
+});
+
+
+
+
+
+/*==================================================
+            VISIBILIDAD DE PESTAÑA
+==================================================*/
+
+/*
+    Cuando el usuario vuelve a la pestaña,
+    actualizamos el estado visual por si el
+    navegador pausó alguna animación.
+*/
+
+document.addEventListener("visibilitychange", () => {
+
+    if(document.visibilityState === "visible"){
+
+        headerScroll();
+
+        heroParallax();
+
+        updateWorks();
+
     }
 
-    if(mouseEndX - mouseStartX > 50){
+});
 
-        currentIndex =
-        (currentIndex - 1 + obras.length)
-        % obras.length;
 
-        renderObras();
-    }
 
-}
+
+
+/*==================================================
+            COMPROBACIONES
+==================================================*/
+
+console.group("RAÍZ");
+
+console.log("Header:", !!header);
+
+console.log("Hero:", !!hero);
+
+console.log("Carrusel:", workCards.length);
+
+console.log("Colores:", colorButtons.length);
+
+console.log("FAQ:", faqItems.length);
+
+console.groupEnd();
+
+
+
+
+
+/*==================================================
+                FIN
+==================================================*/
 
 const japaneseWords =
 document.querySelectorAll(".jp-floating");
@@ -592,14 +710,3 @@ window.addEventListener("scroll", () => {
     });
 
 });
-
-// Mostrar una configuración por defecto al cargar la página
-
-const inicial = configuraciones.rojo;
-
-preview.innerHTML = `
-<img src="${inicial.imagen}" alt="">
-`;
-
-infoTitle.textContent = inicial.titulo;
-infoText.textContent = inicial.texto;
