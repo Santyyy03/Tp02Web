@@ -1,0 +1,1459 @@
+/*==================================================
+                DETALLE CURSO
+                PARTE 1
+==================================================*/
+
+
+/*=========================================
+            VARIABLES
+=========================================*/
+
+:root{
+
+    --course-hero-height:100svh;
+
+    --course-gap:120px;
+
+    --course-radius:0px;
+
+    --course-transition:.45s ease;
+
+}
+
+
+
+/*=========================================
+            ESPACIADO GENERAL
+=========================================*/
+
+.course-hero,
+.course-stats,
+.course-customization,
+.course-content,
+.course-timeline,
+.course-buy,
+.related-courses{
+
+    position:relative;
+
+}
+
+
+
+
+/*=========================================
+                HERO
+=========================================*/
+
+.course-hero{
+
+    min-height:var(--course-hero-height);
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:140px;
+
+}
+
+.section-tag-hero {
+    color: var(--color-primary);
+
+}
+
+#hero {
+background-color: var(--color-light);}
+
+
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+
+
+.hero-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+
+
+.breadcrumb{
+
+    display:flex;
+
+    gap:.6rem;
+
+    margin-bottom:2rem;
+
+    font-size:.9rem;
+
+    opacity:.7;
+
+}
+
+
+
+.breadcrumb a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+.breadcrumb strong{
+
+    color:var(--color-primary);
+
+    font-weight:600;
+
+}
+
+
+
+.course-hero h1{
+
+    margin-bottom:2rem;
+
+    max-width:650px;
+
+}
+
+
+
+.hero-description{
+
+    max-width:620px;
+
+    line-height:1.9;
+
+    margin-bottom:3rem;
+
+}
+
+
+
+.hero-badges{
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.badge{
+
+    border:1px solid rgba(0,0,0,.08);
+
+    padding:18px 24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    min-width:140px;
+
+}
+
+
+
+.badge span{
+
+    font-size:.75rem;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color: var(--color-secondary);
+
+}
+
+
+
+.badge strong{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:620px;
+
+    display:block;
+
+    transition:.6s;
+
+}
+
+
+
+.hero-image:hover img{
+
+    transform:scale(1.03);
+
+}
+
+
+/*=========================================
+                STATS
+=========================================*/
+
+.course-stats{
+
+    padding-block:100px;
+
+}
+
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:40px;
+
+    padding: 2rem;
+
+}
+
+.course-stats {
+
+    background-color: var(--color-accent2);
+}
+
+
+
+.stat-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items: center;
+
+
+}
+
+.stats-text2 {
+text-align: center;
+}
+
+
+
+.stat-number{
+
+    font-family:var(--font-heading);
+
+    font-size:4.5rem;
+
+    line-height:1;
+
+    color:var(--color-primary);
+
+}
+
+
+
+.stat-line{
+
+    width:80px;
+
+    height:2px;
+
+    background:var(--color-primary);
+
+    margin:18px 0 22px;
+
+    transition:.4s;
+
+}
+
+
+
+.stat-card:hover .stat-line{
+
+    width:120px;
+
+}
+
+
+
+.stat-card p{
+
+    max-width:230px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+/*=========================================
+            SECTION HEADER
+=========================================*/
+
+#works {
+    padding-top: 100px;
+
+}
+
+.section-header{
+
+    max-width:1400px;
+
+    margin:0 auto 50px;  
+
+    text-align:center;
+
+}
+
+
+
+.section-header h2{
+
+    font-weight: 500;
+
+}
+
+
+
+.section-description{
+
+    max-width:640px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+}
+
+/*==================================================
+            PERSONALIZACIÓN
+==================================================*/
+
+.course-customization{
+
+    overflow:hidden;
+
+}
+
+.container-per {
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    
+}
+
+
+
+/*=========================================
+            CONTENEDOR
+=========================================*/
+
+.customization-slider{
+
+    display:grid;
+
+    grid-template-columns:0.85fr 1.2fr 0.85fr;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+
+
+/*=========================================
+                TARJETA
+=========================================*/
+
+.course-card{
+
+    position:relative;
+
+    aspect-ratio:0.75;
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .55s ease,
+        scale .45s ease,
+        opacity .35s ease;
+
+    cursor:pointer;
+
+}
+
+
+
+/*=========================================
+        TARJETA ACTIVA
+=========================================*/
+
+.course-card.active{
+
+    scale:1.05;
+    z-index:5;
+
+}
+
+
+
+/*=========================================
+        TARJETAS LATERALES
+=========================================*/
+
+.course-card:not(.active){
+
+    scale:.88;
+    opacity:.8;
+
+}
+
+
+
+.course-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+/*=========================================
+        CARAS
+=========================================*/
+
+.course-card-front,
+.course-card-back{
+
+    position:absolute;
+
+    inset:0;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    background:var(--color-light);
+
+    backface-visibility:hidden;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+
+
+/*=========================================
+            DORSO
+=========================================*/
+
+.course-card-back{
+
+    transform:rotateY(180deg);
+
+}
+
+
+
+.course-card.active .course-card-front{
+
+    transform:rotateY(180deg);
+
+}
+
+
+
+.course-card.active .course-card-back{
+
+    transform:rotateY(360deg);
+
+}
+
+
+
+/*=========================================
+        TRANSICIONES
+=========================================*/
+
+.course-card-front,
+.course-card-back{
+
+    transition:transform .7s cubic-bezier(.22,.8,.22,1);
+
+}
+
+
+
+/*=========================================
+            IMAGEN
+=========================================*/
+
+.course-card img{
+
+    width:100%;
+    height:340px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+/*=========================================
+        TÍTULO FRENTE
+=========================================*/
+
+.course-card-title{
+
+    padding:28px;
+
+}
+
+
+
+.course-card-title h3{
+
+    margin-bottom:8px;
+
+}
+
+
+
+.course-card-title span{
+
+    opacity:.6;
+
+    font-size:.95rem;
+
+}
+
+
+
+/*=========================================
+        CONTENIDO DORSO
+=========================================*/
+
+.card-content{
+
+    padding:28px;
+
+    flex:1;
+
+}
+
+
+
+.card-title{
+
+    margin-bottom:8px;
+
+}
+
+
+
+.card-subtitle{
+
+    color:var(--color-secondary);
+
+    margin-bottom:20px;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+}
+
+.section-title3 {
+    
+    color: var(--color-light);
+
+    font-family:var(--font-display);
+
+    font-size:var(--fs-title);
+
+    font-weight:var(--fw-medium);
+
+    line-height:1.05;
+
+    max-width: 1400px;
+
+    text-align: center;
+}
+
+.card-description{
+
+    line-height:1.8;
+
+}
+
+
+
+/*=========================================
+        SELECTORES
+=========================================*/
+
+.selector-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:14px;
+
+    padding:28px;
+
+}
+
+
+
+/*=========================================
+            BOTONES
+=========================================*/
+
+.selector{
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+
+
+/*=========================================
+        ESTADOS
+=========================================*/
+
+.selector:hover{
+
+    transform:scale(1.15);
+
+}
+
+
+
+.selector.active{
+
+    scale:1.25;
+
+}
+
+
+
+/*=========================================
+        COLORES
+=========================================*/
+
+/* madera */
+
+[data-type="wood"][data-index="0"]{
+
+    background:#593C2A;
+
+}
+
+[data-type="wood"][data-index="1"]{
+
+    background:#B98A5A;
+
+}
+
+[data-type="wood"][data-index="2"]{
+
+    background:#232323;
+
+}
+
+
+
+/* tapizados */
+
+[data-type="color"][data-index="0"]{
+
+    background:#293A7C;
+
+}
+
+[data-type="color"][data-index="1"]{
+
+    background:#BE1818;
+
+}
+
+[data-type="color"][data-index="2"]{
+
+    background:#FFD359;
+
+}
+
+
+
+/* patrones */
+
+[data-type="pattern"]{
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+[data-index="0"][data-type="pattern"]{
+
+    background-image:url("../img/cursos/detalle/ui/kikko.jpg");
+
+}
+
+[data-index="1"][data-type="pattern"]{
+
+    background-image:url("../img/cursos/detalle/ui/asanoha.jpg");
+
+}
+
+[data-index="2"][data-type="pattern"]{
+
+    background-image:url("../img/cursos/detalle/ui/seigaiha.jpg");
+
+}
+
+
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:1050px){
+
+.customization-slider{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.course-card{
+
+max-width:520px;
+
+width:100%;
+
+margin:auto;
+
+}
+
+.course-card:not(.active){
+
+scale:1;
+
+opacity:1;
+
+}
+
+}
+
+/*==================================================
+            QUÉ INCLUYE EL CURSO
+==================================================*/
+
+.course-content{
+
+    padding-top:140px;
+
+}
+
+
+
+.content-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+
+
+.content-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+.content-text h2{
+
+    margin:20px 0 40px;
+
+}
+
+
+
+.content-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+
+
+.content-list li{
+
+    position:relative;
+
+    padding-left:34px;
+
+    line-height:1.9;
+
+}
+
+
+
+.content-list li::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:13px;
+
+    width:14px;
+
+    height:2px;
+
+    background:var(--color-primary);
+
+}
+
+
+
+.content-image{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+
+
+.content-image img{
+
+    width:100%;
+
+    max-width:620px;
+
+    display:block;
+
+}
+
+
+
+
+
+/*==================================================
+                TIMELINE
+==================================================*/
+
+#crono {
+    padding-block: 100px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.course-timeline{
+
+    overflow:hidden;
+
+}
+
+
+
+.timeline-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding-top:70px;
+
+}
+
+
+
+.timeline-line{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    top:104px;
+
+    height:2px;
+
+    background:rgba(0,0,0,.12);
+
+    z-index:0;
+
+}
+
+
+
+/*=========================================
+            TARJETAS
+=========================================*/
+
+.timeline-card{
+
+    position:relative;
+
+    width:220px;
+
+    flex-shrink:0;
+
+    cursor:pointer;
+
+    transition:.45s;
+
+    z-index:2;
+
+}
+
+
+
+.timeline-card.active{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.timeline-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+
+/*=========================================
+            STOP
+=========================================*/
+
+.timeline-stop{
+
+    width:56px;
+
+    height:56px;
+
+    margin:auto;
+
+    margin-bottom:40px;
+
+    border:2px solid var(--color-primary);
+
+    background:var(--color-light);
+
+    color:var(--color-primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    transition:.4s;
+
+}
+
+
+
+.timeline-card.active .timeline-stop{
+
+    background:var(--color-primary);
+
+    color:var(--color-light);
+
+}
+
+
+
+/*=========================================
+            CARAS
+=========================================*/
+
+.timeline-front,
+.timeline-back{
+
+    border:1px solid rgba(0,0,0,.08);
+
+    padding:26px;
+
+    min-height:180px;
+
+    background:var(--color-light);
+
+    transition:.6s;
+
+    backface-visibility:hidden;
+
+}
+
+
+
+.timeline-front{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+
+.timeline-front span{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+}
+
+
+
+.timeline-back{
+
+    position:absolute;
+
+    inset:96px 0 auto;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:rotateY(180deg);
+
+}
+
+
+
+.timeline-back h3{
+
+    margin-bottom:18px;
+
+}
+
+
+
+.timeline-back p{
+
+    line-height:1.8;
+
+}
+
+
+
+/*=========================================
+            ACTIVA
+=========================================*/
+
+.timeline-card.active .timeline-front{
+
+    opacity:0;
+
+    transform:rotateY(180deg);
+
+}
+
+
+
+.timeline-card.active .timeline-back{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:rotateY(360deg);
+
+}
+
+
+/*==================================================
+                COMPRAR CURSO
+==================================================*/
+
+.course-buy{
+
+    padding-block:140px;
+
+}
+
+
+
+.buy-card{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:80px;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    padding:70px;
+
+    background-color: var(--color-light);
+
+}
+
+
+
+.buy-info h2{
+
+    margin:20px 0 30px;
+
+}
+
+
+
+.buy-info p{
+
+    max-width:600px;
+
+    line-height:1.9;
+
+}
+
+
+
+.buy-info ul{
+
+    list-style:none;
+
+    margin-top:40px;
+
+    padding:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+.buy-price{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-inline:40px;
+
+}
+
+
+
+.price-title{
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    margin-bottom:10px;
+
+    color: var(--color-light);
+
+}
+
+.section-description2 {
+    color: var(--color-dark);
+}
+
+.section-description3 {
+    color: var(--color-accent);
+}
+
+.buy-price h3{
+
+    font-size:3.5rem;
+
+    color:var(--color-accent);
+
+    margin-bottom:10px;
+
+}
+
+#inscri {
+    background-color: var(--color-accent2);
+}
+
+.buy-price p{
+
+    margin-bottom:40px;
+
+}
+
+.buy-price {
+    background-color: var(--color-accent2);
+}
+
+
+
+/*==================================================
+                OTROS CURSOS
+==================================================*/
+
+#otroscursos {
+    background-color: var(--color-accent2);
+    display: flex;
+    justify-content: center;
+
+}
+
+.related-courses{
+
+    padding-block:100px; 
+
+}
+
+
+.courses-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+
+.course-preview-card{
+
+    border:1px solid rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+    transition:.45s ease;
+
+    background:var(--color-light);
+
+}
+
+.section-tag-otro {
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:var(--space-8);
+
+    color:var(--color-accent);
+
+    font-size:var(--fs-tag);
+
+    font-weight:var(--fw-semibold);
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+}
+
+.course-preview-card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+
+
+.course-preview-content{
+
+    padding:32px;
+
+}
+
+
+
+.course-preview-content h3{
+
+    margin-bottom:18px;
+
+}
+
+
+
+.course-preview-content p{
+
+    line-height:1.8;
+
+    margin-bottom:26px;
+
+}
+
+
+
+.course-preview-content a{
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+
+.course-preview-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.course-preview-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+/*==================================================
+                FAQ
+==================================================*/
+
+.faq{
+
+    padding-block:140px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+
