@@ -1,41 +1,130 @@
 /*==================================================
-                RAÍZ
-                script.js
-==================================================*/
-
-"use strict";
-
-/*==================================================
-                SELECTORES
+                    ELEMENTS
 ==================================================*/
 
 const header = document.querySelector(".header");
 
-const scrollIndicator = document.querySelector(".scroll-indicator");
+
+
+/*==============================
+        HERO
+==============================*/
 
 const hero = document.querySelector(".hero");
 
-const layer1 = document.querySelector(".layer-1");
 
-const layer2 = document.querySelector(".layer-2");
 
-const layer3 = document.querySelector(".layer-3");
+/*==============================
+        WORKS
+==============================*/
+
+const workCards = document.querySelectorAll(".work-card");
+
+
+
+/*==============================
+    CUSTOMIZATION
+==============================*/
+
+const customizationImage = document.querySelector("#customization-image");
+
+const customizationCircle = document.querySelector(".customization-circle");
+
+const colorButtons = document.querySelectorAll(".color-button");
+
+const customCards = document.querySelectorAll(".custom-card");
+
+
+
+/*==============================
+        FAQ
+==============================*/
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+
+
+/*==============================
+        REVEAL
+==============================*/
+
+const revealElements = document.querySelectorAll(".reveal");
+
+
+
+/*==============================
+        PARALLAX
+==============================*/
+
+const parallaxBackgrounds = document.querySelectorAll(".parallax-background");
+
+const parallaxContents = document.querySelectorAll(".parallax-content");
+
+const parallaxForegrounds = document.querySelectorAll(".parallax-foreground");
 
 
 
 /*==================================================
-            HEADER SCROLL
+                CONFIGURATION
 ==================================================*/
 
-function headerScroll(){
+const headerScroll = 80;
 
-    if(window.scrollY > 40){
+const revealOptions = {
+
+    threshold: 0.15,
+
+    rootMargin: "0px 0px -80px 0px"
+
+};
+
+
+
+/*==================================================
+                HELPERS
+==================================================*/
+
+function removeClass(elements, className){
+
+    elements.forEach(element => {
+
+        element.classList.remove(className);
+
+    });
+
+}
+
+
+
+function addClass(element, className){
+
+    if(!element) return;
+
+    element.classList.add(className);
+
+}
+
+
+
+function toggleClass(element, className){
+
+    if(!element) return;
+
+    element.classList.toggle(className);
+
+}
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+function updateHeader() {
+
+    if (window.scrollY > headerScroll) {
 
         header.classList.add("scrolled");
 
-    }
-
-    else{
+    } else {
 
         header.classList.remove("scrolled");
 
@@ -43,118 +132,31 @@ function headerScroll(){
 
 }
 
-window.addEventListener("scroll", headerScroll);
-
-headerScroll();
-
-
+window.addEventListener("scroll", updateHeader);
 
 
 
 /*==================================================
-        BOTÓN SCROLL HERO
+                    REVEAL
 ==================================================*/
 
-if(scrollIndicator){
+const revealObserver = new IntersectionObserver((entries) => {
 
-    scrollIndicator.addEventListener("click", () => {
+    entries.forEach(entry => {
 
-        const nextSection = hero.nextElementSibling;
+        if (!entry.isIntersecting) return;
 
-        if(nextSection){
+        entry.target.classList.add("is-visible");
 
-            nextSection.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
+        revealObserver.unobserve(entry.target);
 
     });
 
-}
+}, revealOptions);
 
 
 
-
-
-/*==================================================
-            PARALLAX HERO
-==================================================*/
-
-function heroParallax(){
-
-    const scroll = window.scrollY;
-
-    if(!hero) return;
-
-    if(scroll > hero.offsetHeight){
-
-        return;
-
-    }
-
-    layer1.style.transform =
-        `translateY(${scroll * 0.18}px) translateX(${scroll * 0.05}px)`;
-
-    layer2.style.transform =
-        `translateY(${scroll * -0.12}px) translateX(${scroll * -0.08}px)`;
-
-    layer3.style.transform =
-        `translateY(${scroll * 0.28}px) translateX(${scroll * -0.04}px)`;
-
-}
-
-window.addEventListener("scroll", heroParallax);
-
-heroParallax();
-
-/*==================================================
-            REVEAL ON SCROLL
-==================================================*/
-
-/*
-    Todos los elementos que tengan la clase
-    .reveal aparecerán al entrar en pantalla.
-
-    Ejemplo:
-
-    <div class="concept-card reveal"></div>
-
-*/
-
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("show");
-
-                revealObserver.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-
-    {
-
-        threshold:0.15,
-
-        rootMargin:"0px 0px -80px 0px"
-
-    }
-
-);
-
-revealElements.forEach((element)=>{
+revealElements.forEach(element => {
 
     revealObserver.observe(element);
 
@@ -162,346 +164,39 @@ revealElements.forEach((element)=>{
 
 
 
-
-
 /*==================================================
-        REVEAL ESCALONADO
+                    PARALLAX
 ==================================================*/
 
-/*
+let lastScroll = 0;
+let ticking = false;
 
-Permite que las tarjetas aparezcan
-una detrás de otra.
 
-*/
 
-const revealGroups = [
+function updateParallax(scrollY){
 
-    ".concept-card",
+    parallaxBackgrounds.forEach(element => {
 
-    ".work-card",
-
-    ".custom-card",
-
-    ".gallery-item",
-
-    ".course-card",
-
-    ".faq-item"
-
-];
-
-revealGroups.forEach((selector)=>{
-
-    const items = document.querySelectorAll(selector);
-
-    items.forEach((item,index)=>{
-
-        item.style.transitionDelay = `${index * 0.12}s`;
+        element.style.transform =
+            `translate3d(0, ${scrollY * 0.12}px, 0)`;
 
     });
 
-});
-
-/*==================================================
-                    OBRAS
-==================================================*/
-
-const workCards = document.querySelectorAll(".work-card");
 
 
+    parallaxContents.forEach(element => {
 
-/*==================================================
-                FLIP
-==================================================*/
-
-workCards.forEach(card => {
-
-    card.addEventListener("click", e => {
-
-        if(e.target.closest(".button")) return;
-
-        workCards.forEach(otherCard => {
-
-            if(otherCard !== card){
-
-                otherCard.classList.remove("flipped");
-
-            }
-
-        });
-
-        card.classList.toggle("flipped");
+        element.style.transform =
+            `translate3d(0, ${scrollY * 0.06}px, 0)`;
 
     });
 
-});
 
-/*==================================================
-        CAMBIO DE IMAGEN EN HOVER
-==================================================*/
 
-workCards.forEach(card => {
+    parallaxForegrounds.forEach(element => {
 
-    const oldImage = card.querySelector(".image-old");
-    const newImage = card.querySelector(".image-new");
-
-    card.addEventListener("mouseenter",()=>{
-
-        oldImage.style.opacity="0";
-        newImage.style.opacity="1";
-
-    });
-
-    card.addEventListener("mouseleave",()=>{
-
-    if(card.classList.contains("flipped")) return;
-
-    oldImage.style.opacity="1";
-
-    newImage.style.opacity="0";
-
-    });
-
-});
-
-/*==================================================
-            RESET IMAGEN
-==================================================*/
-
-document.addEventListener("click",e=>{
-
-    workCards.forEach(card=>{
-
-        if(card.contains(e.target)) return;
-
-        card.classList.remove("flipped");
-
-        const oldImage=card.querySelector(".image-old");
-        const newImage=card.querySelector(".image-new");
-
-        oldImage.style.opacity="1";
-        newImage.style.opacity="0";
-
-    });
-
-});
-
-/*==================================================
-            PERSONALIZACIÓN
-==================================================*/
-
-const productImage =
-    document.querySelector(".product-image");
-
-const colorButtons =
-    document.querySelectorAll(".color-btn");
-
-const customCards =
-    document.querySelectorAll(".custom-card");
-
-
-
-
-
-/*==================================================
-                DATOS
-==================================================*/
-
-const customizationData = {
-
-    blue:{
-
-        image:"imagenes/muebles/azul/silla_azul_1.png",
-
-        cards:[
-
-            {
-
-                title:"Madera Natural",
-
-                text:"Terminación mate que conserva la textura y la esencia de la madera."
-
-            },
-
-            {
-
-                title:"Azul Índigo",
-
-                text:"Inspirado en los tonos tradicionales japoneses para transmitir calma y profundidad."
-
-            },
-
-            {
-
-                title:"Patrón Kikkō",
-
-                text:"Símbolo de longevidad y equilibrio dentro de la cultura japonesa."
-
-            },
-
-            {
-
-                title:"Serenidad",
-
-                text:"Una pieza pensada para transmitir equilibrio, calma y elegancia."
-
-            }
-
-        ]
-
-    },
-
-
-
-
-
-    red:{
-
-        image:"imagenes/muebles/rojo/silla_roja_1.png",
-
-        cards:[
-
-            {
-
-                title:"Roble claro",
-
-                text:"Acabado suave que resalta la luminosidad natural de la madera."
-
-            },
-
-            {
-
-                title:"Rojo Carmesí",
-
-                text:"Inspirado en los tradicionales torii japoneses."
-
-            },
-
-            {
-
-                title:"Patrón Asanoha",
-
-                text:"Representa crecimiento, fuerza y prosperidad."
-
-            },
-
-            {
-
-                title:"Carácter",
-
-                text:"Una combinación intensa que transmite energía y presencia."
-
-            }
-
-        ]
-
-    },
-
-
-
-
-
-    gold:{
-
-        image:"imagenes/muebles/dorado/silla_dorado_1.png",
-
-        cards:[
-
-            {
-
-                title:"Nogal Oscuro",
-
-                text:"La veta natural adquiere mayor protagonismo gracias al acabado profundo."
-
-            },
-
-            {
-
-                title:"Dorado Arena",
-
-                text:"Una paleta cálida inspirada en la naturaleza japonesa."
-
-            },
-
-            {
-
-                title:"Patrón Seigaiha",
-
-                text:"Las olas representan tranquilidad, continuidad y buena fortuna."
-
-            },
-
-            {
-
-                title:"Armonía",
-
-                text:"Un diseño cálido que busca generar paz y equilibrio visual."
-
-            }
-
-        ]
-
-    }
-
-};
-
-
-
-
-
-/*==================================================
-            ACTUALIZAR PRODUCTO
-==================================================*/
-
-function updateCustomization(color){
-
-    const colors={
-
-blue:"rgba(50,93,155,.12)",
-
-red:"rgba(166,61,64,.12)",
-
-gold:"rgba(176,138,74,.12)"
-
-};
-
-document.documentElement.style
-.setProperty(
-
-"--circle-color",
-
-colors[color]
-
-);
-
-    const data = customizationData[color];
-
-    if(!data) return;
-
-
-
-
-
-    productImage.src = data.image;
-
-
-
-
-
-    customCards.forEach((card,index)=>{
-
-        const title =
-            card.querySelector(".custom-card-title");
-
-        const text =
-            card.querySelector(".custom-card-text");
-
-        title.textContent =
-            data.cards[index].title;
-
-        text.textContent =
-            data.cards[index].text;
+        element.style.transform =
+            `translate3d(0, ${scrollY * 0.02}px, 0)`;
 
     });
 
@@ -509,156 +204,564 @@ colors[color]
 
 
 
+function handleScroll(){
 
+    lastScroll = window.scrollY;
 
-/*==================================================
-            BOTONES
-==================================================*/
+    updateHeader();
 
-colorButtons.forEach((button)=>{
+    if(!ticking){
 
-    button.addEventListener("click",()=>{
+        window.requestAnimationFrame(() => {
 
-        colorButtons.forEach((btn)=>{
+            updateParallax(lastScroll);
 
-            btn.classList.remove("active");
-
-        });
-
-
-
-
-
-        button.classList.add("active");
-
-
-
-
-
-        updateCustomization(
-
-            button.dataset.color
-
-        );
-
-    });
-
-});
-
-
-
-
-
-/*==================================================
-                INICIO
-==================================================*/
-
-updateCustomization("blue");
-
-/*==================================================
-                    FAQ
-==================================================*/
-
-const faqItems =
-    document.querySelectorAll(".faq-item");
-
-
-
-
-
-/*==================================================
-            ACORDEÓN
-==================================================*/
-
-faqItems.forEach((item)=>{
-
-    const button =
-        item.querySelector(".faq-question");
-
-    button.addEventListener("click",()=>{
-
-        const isActive =
-            item.classList.contains("active");
-
-
-
-
-
-        /*------------------------------------------
-            CERRAR TODOS
-        ------------------------------------------*/
-
-        faqItems.forEach((faq)=>{
-
-            faq.classList.remove("active");
+            ticking = false;
 
         });
 
+        ticking = true;
+
+    }
+
+}
+
+window.addEventListener("scroll", handleScroll);
 
 
 
+/*==================================================
+                INITIAL UPDATE
+==================================================*/
 
-        /*------------------------------------------
-            ABRIR EL SELECCIONADO
-        ------------------------------------------*/
+updateHeader();
 
-        if(!isActive){
+updateParallax(window.scrollY);
 
-            item.classList.add("active");
+/*==================================================
+                    WORKS
+==================================================*/
+
+let activeCard = null;
+
+let flippedCard = null;
+
+
+
+/*==============================
+        ACTIVATE CARD
+==============================*/
+
+function activateCard(card){
+
+    workCards.forEach(currentCard => {
+
+        currentCard.classList.remove("active");
+
+        const image = currentCard.querySelector(".card-image");
+
+        if(
+            image &&
+            image.dataset.before &&
+            currentCard !== flippedCard
+        ){
+
+            image.src = image.dataset.before;
 
         }
 
     });
 
+
+
+    card.classList.add("active");
+
+
+
+    const image = card.querySelector(".card-image");
+
+    if(image && image.dataset.after){
+
+        image.src = image.dataset.after;
+
+    }
+
+
+
+    activeCard = card;
+
+}
+
+
+
+/*==============================
+        RESET CARD
+==============================*/
+
+function resetCard(card){
+
+    if(card === flippedCard){
+
+        return;
+
+    }
+
+
+
+    card.classList.remove("active");
+
+
+
+    const image = card.querySelector(".card-image");
+
+    if(image && image.dataset.before){
+
+        image.src = image.dataset.before;
+
+    }
+
+}
+
+
+
+/*==============================
+        FLIP CARD
+==============================*/
+
+function flipCard(card){
+
+    if(flippedCard && flippedCard !== card){
+
+        flippedCard.classList.remove("is-flipped");
+
+
+
+        const previousImage = flippedCard.querySelector(".card-image");
+
+        if(previousImage && previousImage.dataset.before){
+
+            previousImage.src = previousImage.dataset.before;
+
+        }
+
+    }
+
+
+
+    if(card.classList.contains("is-flipped")){
+
+        card.classList.remove("is-flipped");
+
+
+
+        const image = card.querySelector(".card-image");
+
+        if(image && image.dataset.before){
+
+            image.src = image.dataset.before;
+
+        }
+
+
+
+        flippedCard = null;
+
+        return;
+
+    }
+
+
+
+    card.classList.add("is-flipped");
+
+
+
+    const image = card.querySelector(".card-image");
+
+    if(image && image.dataset.after){
+
+        image.src = image.dataset.after;
+
+    }
+
+
+
+    flippedCard = card;
+
+}
+
+
+
+/*==============================
+        EVENTS
+==============================*/
+
+workCards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        activateCard(card);
+
+    });
+
+
+
+    card.addEventListener("mouseleave", () => {
+
+        resetCard(card);
+
+    });
+
+
+
+    card.addEventListener("click", () => {
+
+        activateCard(card);
+
+        flipCard(card);
+
+    });
+
 });
 
 /*==================================================
-                INICIALIZACIÓN
+                PERSONALIZACIÓN
+==================================================*/
+
+
+const customizationData = {
+
+    blue: {
+
+        image: "imagenes/muebles/azul/silla_azul_1.png",
+        color: "#293A7C",
+
+        cards: [
+
+            {
+                label: "ACABADO",
+                title: "Madera Natural",
+                text: "Terminación mate que conserva la textura y la esencia de la madera."
+            },
+
+            {
+                label: "PALETA",
+                title: "Azul Índigo",
+                text: "Inspirado en los tonos tradicionales japoneses para transmitir calma y profundidad."
+            },
+
+            {
+                label: "TAPIZADO",
+                title: "Patrón Kikkō",
+                text: "Inspirado en el caparazón de la tortuga japonesa, símbolo de longevidad y equilibrio."
+            },
+
+            {
+                label: "PERSONALIDAD",
+                title: "Serenidad",
+                text: "Una pieza que transmite equilibrio, elegancia y permanencia."
+            }
+
+        ]
+
+    },
+
+    red: {
+
+        image: "imagenes/muebles/rojo/silla_roja_1.png",
+        color: "#dd1515",
+
+        cards: [
+
+            {
+                label: "ACABADO",
+                title: "Roble claro",
+                text: "Acabado suave que resalta la luminosidad natural de la madera."
+            },
+
+            {
+                label: "PALETA",
+                title: "Rojo Carmesí",
+                text: "Inspirado en los tradicionales torii japoneses."
+            },
+
+            {
+                label: "TAPIZADO",
+                title: "Patrón Asanoha",
+                text: "Representa crecimiento, fuerza y prosperidad."
+            },
+
+            {
+                label: "PERSONALIDAD",
+                title: "Carácter",
+                text: "Una combinación intensa que transmite energía y presencia."
+            }
+
+        ]
+
+    },
+
+    gold: {
+
+        image: "imagenes/muebles/dorado/silla_dorado_1.png",
+        color: "#ffd359 ",
+
+        cards: [
+
+            {
+                label: "ACABADO",
+                title: "Nogal Oscuro",
+                text: "La veta natural adquiere mayor protagonismo gracias al acabado profundo."
+            },
+
+            {
+                label: "PALETA",
+                title: "Dorado Arena",
+                text: "Una paleta cálida inspirada en la naturaleza japonesa."
+            },
+
+            {
+                label: "TAPIZADO",
+                title: "Patrón Seigaiha",
+                text: "Las olas representan tranquilidad, continuidad y buena fortuna."
+            },
+
+            {
+                label: "PERSONALIDAD",
+                title: "Armonía",
+                text: "Un diseño cálido que busca generar paz y equilibrio visual."
+            }
+
+        ]
+
+    }
+
+};
+
+
+
+function updateCards(data){
+
+    customCards.forEach((card,index)=>{
+
+        const label = card.querySelector(".custom-card-label");
+        const title = card.querySelector(".custom-card-title");
+        const text = card.querySelector(".custom-card-text");
+
+        card.style.opacity = "0";
+        card.style.transform = "translateY(15px)";
+
+        setTimeout(()=>{
+
+            label.textContent = data.cards[index].label;
+            title.textContent = data.cards[index].title;
+            text.textContent = data.cards[index].text;
+
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+
+        },180);
+
+    });
+
+}
+
+
+
+function changeCustomization(color){
+
+    const data = customizationData[color];
+
+    if(!data) return;
+
+    customizationImage.classList.add("change");
+
+    setTimeout(()=>{
+
+        customizationImage.src = data.image;
+        customizationCircle.style.background = data.color;
+
+        updateCards(data);
+
+    },180);
+
+    customizationImage.onload = ()=>{
+
+        customizationImage.classList.remove("change");
+
+    };
+
+}
+
+
+
+colorButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        colorButtons.forEach(btn=>{
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+        changeCustomization(button.dataset.color);
+
+    });
+
+});
+
+
+
+changeCustomization("blue");
+
+
+
+/*==================================================
+                        FAQ
+==================================================*/
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector(".faq-question");
+
+
+
+    question.addEventListener("click", () => {
+
+        faqItems.forEach(currentItem => {
+
+            if(currentItem !== item){
+
+                currentItem.classList.remove("active");
+
+            }
+
+        });
+
+
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+/*==================================================
+                    CAPSULE
+==================================================*/
+
+const capsuleTrack = document.querySelector(".capsule-track");
+
+const capsuleSlider = document.querySelector(".capsule-slider");
+
+
+
+if(capsuleTrack && capsuleSlider){
+
+    capsuleSlider.addEventListener("mouseenter", () => {
+
+        capsuleTrack.style.animationPlayState = "paused";
+
+    });
+
+
+
+    capsuleSlider.addEventListener("mouseleave", () => {
+
+        capsuleTrack.style.animationPlayState = "running";
+
+    });
+
+}
+
+
+
+/*==================================================
+                INITIALIZATION
 ==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("RAÍZ iniciado correctamente.");
-
-});
+    updateHeader();
 
 
 
+    revealElements.forEach(element => {
 
+        revealObserver.observe(element);
 
-/*==================================================
-                RESIZE
-==================================================*/
-
-window.addEventListener("resize", () => {
-
-    heroParallax();
-
-});
+    });
 
 
 
+    updateParallax(window.scrollY);
 
 
-/*==================================================
-            VISIBILIDAD DE PESTAÑA
-==================================================*/
 
-/*
-    Cuando el usuario vuelve a la pestaña,
-    actualizamos el estado visual por si el
-    navegador pausó alguna animación.
-*/
+    if(colorButtons.length){
 
-document.addEventListener("visibilitychange", () => {
+        const activeButton = document.querySelector(".color-button.active");
 
-    if(document.visibilityState === "visible"){
 
-        headerScroll();
 
-        heroParallax();
+        if(activeButton){
 
-        updateWorks();
+            changeCustomization(
+
+                activeButton.dataset.color
+
+            );
+
+        }
+
+    }
+
+
+
+    if(workCards.length){
+
+        workCards.forEach(card => {
+
+            card.classList.remove("active");
+
+            card.classList.remove("is-flipped");
+
+
+
+            const image = card.querySelector(".card-image");
+
+
+
+            if(image && image.dataset.before){
+
+                image.src = image.dataset.before;
+
+            }
+
+        });
+
+    }
+
+
+
+    if(faqItems.length){
+
+        faqItems.forEach((item,index)=>{
+
+            if(index===0){
+
+                item.classList.add("active");
+
+            }else{
+
+                item.classList.remove("active");
+
+            }
+
+        });
 
     }
 
@@ -666,47 +769,115 @@ document.addEventListener("visibilitychange", () => {
 
 
 
-
-
 /*==================================================
-            COMPROBACIONES
+                    RESIZE
 ==================================================*/
 
-console.group("RAÍZ");
+window.addEventListener("resize", () => {
 
-console.log("Header:", !!header);
+    updateParallax(window.scrollY);
 
-console.log("Hero:", !!hero);
-
-console.log("Carrusel:", workCards.length);
-
-console.log("Colores:", colorButtons.length);
-
-console.log("FAQ:", faqItems.length);
-
-console.groupEnd();
-
-
+});
 
 
 
 /*==================================================
-                FIN
+                    END
 ==================================================*/
 
-const japaneseWords =
-document.querySelectorAll(".jp-floating");
+/*==================================================
+            DEPTH PARALLAX
+==================================================*/
 
-window.addEventListener("scroll", () => {
+const depthHeaders = document.querySelectorAll(".depth-header");
 
-    const scroll =
-    window.pageYOffset;
+const depthContents = document.querySelectorAll(".depth-content");
 
-    japaneseWords.forEach((word,index)=>{
+const depthJapanese = document.querySelectorAll(".depth-japanese");
 
-        word.style.transform =
-        `translateY(${scroll * (0.07 + index * 0.05)}px)`;
+
+
+let depthTicking = false;
+
+
+
+function updateDepthParallax(){
+
+    const scroll = window.scrollY;
+
+
+
+    /*----------------------------------
+            SECTION HEADER
+    ----------------------------------*/
+
+    depthHeaders.forEach(element=>{
+
+        const rect = element.getBoundingClientRect();
+
+        const offset = (rect.top - window.innerHeight * .5) * -0.010;
+
+        element.style.transform = `translate3d(0, ${offset}px, 0)`;
 
     });
 
+
+
+    /*----------------------------------
+            SECTION CONTENT
+    ----------------------------------*/
+
+    depthContents.forEach(element=>{
+
+        const rect = element.getBoundingClientRect();
+
+        const offset = (rect.top - window.innerHeight * .5) * -0.008;
+
+        element.style.transform = `translate3d(0, ${offset}px, 0)`;
+
+    });
+
+
+
+    /*----------------------------------
+            JAPANESE WORDS
+    ----------------------------------*/
+
+    depthJapanese.forEach(element=>{
+
+        const rect = element.getBoundingClientRect();
+
+        const offset = (rect.top - window.innerHeight * .5) * -0.5;
+
+        element.style.transform = `translate3d(0, ${offset}px, 0)`;
+
+    });
+
+
+
+    depthTicking = false;
+
+}
+
+
+
+window.addEventListener("scroll",()=>{
+
+    if(depthTicking) return;
+
+
+
+    depthTicking = true;
+
+
+
+    requestAnimationFrame(updateDepthParallax);
+
 });
+
+
+
+window.addEventListener("load",updateDepthParallax);
+
+window.addEventListener("resize",updateDepthParallax);
+

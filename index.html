@@ -3,24 +3,47 @@
 
 <head>
 
-    <!-- ==========================================
-                    CONFIGURACIÓN
-    =========================================== -->
+    <!--==================================================
+                        META
+    ===================================================-->
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
+    <meta
+        name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>RAÍZ | Tradición que inspira</title>
+    <meta
+        name="description"
+        content="RAÍZ · Restauración de muebles con inspiración japonesa.">
 
-    <meta name="description"
-        content="Transformá tus muebles con inspiración japonesa.">
+    <title>RAÍZ | Restauración de muebles</title>
+
+
+
+    <!--==================================================
+                        FONTS
+    ===================================================-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+
+
+
+    <!--==================================================
+                        CSS
+    ===================================================-->
 
     <link rel="stylesheet" href="style.css">
 
@@ -30,226 +53,248 @@
 
 
 
-    <!-- ==========================================
-                    HEADER
-    =========================================== -->
+<!--==================================================
+                        HEADER
+===================================================-->
 
-    <header class="header">
+<header
+    id="header"
+    class="header">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="header-content">
+        <a
+            href="#hero"
+            class="logo">
 
-                <!-- Logo -->
+            <img class="logoimagen" src="imagenes/hero/marca.svg" alt="">
 
-                <a href="#hero" class="logo">
+        </a>
 
-                    <img class="logoimagen" src="imagenes/hero/marca.svg" alt="">
+
+
+        <nav
+            class="nav"
+            aria-label="Navegación principal">
+
+            <ul class="nav-list">
+
+                <li class="nav-item">
+
+                    <a
+                        href="#concept"
+                        class="nav-link">
+
+                        Concepto
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        href="#works"
+                        class="nav-link">
+
+                        Obras
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        href="#customization"
+                        class="nav-link">
+
+                        Personalización
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        href="#gallery"
+                        class="nav-link">
+
+                        Galería
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        href="#courses"
+                        class="nav-link">
+
+                        Cursos
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        href="#capsule"
+                        class="nav-link">
+
+                        Cápsulas 
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        href="#faq"
+                        class="nav-link">
+
+                        FAQ
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        href="#contact"
+                        class="nav-link">
+
+                        Contacto
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+
+<!--==================================================
+                        HERO
+===================================================-->
+
+<section
+    id="hero"
+    class="hero">
+
+    <div class="hero-background depth-header">
+
+        <img
+            src="imagenes/hero/fondohero.png"
+            alt="Mueble restaurado"
+            class="hero-image depth-header">
+
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="hero-content depth-header">
+
+            <span class="section-tag-hero depth-header">
+
+                DISEÑO JAPONÉS CONTEMPORÁNEO
+
+            </span>
+
+
+
+            <h1 class="hero-title depth-content">
+                    TRADICIÓN QUE INSPIRA,
+                    <br>
+                    MODERNIDAD QUE FLUYE
+
+            </h1>
+
+
+
+            <p class="hero-description depth-content">
+
+                Donde tu mueble renace con otra alma.
+
+            </p>
+
+                <a
+                    href="#courses"
+                    class="button button-primary">
+
+                    Ver cursos
 
                 </a>
 
-
-
-                <!-- Navegación -->
-
-                <nav class="navigation">
-
-                    <a href="#concepto">Concepto</a>
-
-                    <a href="#works">Obras</a>
-
-                    <a href="#personalizacion">Personalización</a>
-
-                    <a href="#galeria">Galería</a>
-
-                    <a href="#cursos">Cursos</a>
-
-                    <a href="#contacto">Contacto</a>
-
-                </nav>
-
             </div>
 
         </div>
 
-    </header>
+    </div>
 
+</section>
 
-
-
-
-    <!-- ==========================================
-                        HERO
-    =========================================== -->
-
-    <section class="section hero" id="hero">
-
-        <!-- ======================================
-                PALABRAS JAPONESAS
-                (Parallax con JS)
-        ======================================= -->
-
-        <div class="hero-background">
-
-            <span class="jp-word1 layer-1">
-
-                ものづくり
-
-            </span>
-
-            <span class="jp-word2 layer-2">
-
-                一期一会
-
-            </span>
-
-            <span class="jp-word3 layer-3">
-
-                温故知新
-
-            </span>
-
-        </div>
-
-
-
-
-
-        <div class="container">
-
-            <div class="hero-container">
-
-                <!-- ==========================
-                        TEXTO
-                =========================== -->
-
-                <div class="hero-content">
-
-                    <span class="hero-tag">
-
-                        DISEÑO JAPONÉS CONTEMPORÁNEO
-
-                    </span>
-
-
-
-                    <h1 class="hero-title"
-                    data-parallax=".12">
-
-                        TRADICIÓN QUE INSPIRA,
-                        <br>
-                        MODERNIDAD QUE FLUYE
-
-                    </h1>
-
-
-
-                    <p class="hero-description"
-                    data-parallax=".08">
-
-                        Donde tu mueble renace
-                        con otra alma.
-
-                    </p>
-
-
-
-                    <div class="hero-buttons"
-                    data-parallax=".05">
-
-                        <a href="#personalizacion"
-                            class="button button-primary">
-
-                            Transformá tu mueble
-
-                        </a>
-
-
-
-                        <a href="#cursos"
-                            class="button button-secondary">
-
-                            Ver cursos
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-        <!-- ==========================================
+<!--==================================================
                     CONCEPTO
-    =========================================== -->
+===================================================-->
 
-    <section class="section concept reveal" id="concepto">
+<section
+    id="concept"
+    class="section section-dark reveal">
 
-        <div class="jp-background">
+    <div class="container2 reveal">
 
-    <span
-        class="jp-word1 layer-1"
-        data-parallax=".17">
+        <div class="section-header reveal depth-headere">
 
-        職人
+            <span class="section-tag">
 
-    </span>
+                FILOSOFÍA
 
-</div>
+            </span>
 
-        <div class="container">
+            <h2 class="section-title">
 
-            <div class="section-header">
+                ESENCIA Y FORMA
 
-                <span class="section-label">
+            </h2>
 
-                    FILOSOFÍA
+            <p class="section-description">
 
-                </span>
+                En RAÍZ no cambiamos objetos.
+                Despertamos su energía y reinterpretamos
+                lo cotidiano mediante una estética que
+                une tradición japonesa y diseño contemporáneo.
 
-                <h2 class="section-title-concept"
-                data-parallax=".05">
+            </p>
 
-                    LA ESENCIA DETRÁS DE LA FORMA
+        </div>
 
-                </h2>
-
-                <p class="section-description-concept">
-
-                    En RAÍZ no cambiamos objetos.
-                    Despertamos su energía y reinterpretamos
-                    lo cotidiano mediante una estética que
-                    une tradición japonesa y diseño contemporáneo.
-
-                </p>
-
-            </div>
-
-            
-
-
-
-
-
-            <div class="concept-grid reveal">
+        <div class="concept-grid reveal depth-content">
 
                 <!-- ==========================
                         TARJETA 1
                 =========================== -->
 
-                <article class="glass-card concept-card">
+                <article class="concept-card reveal">
 
-                    <div class="concept-icon">
-
-                        <!-- Ícono -->
-
-                    </div>
-
-                    <span class="concept-japanese">
+                    <span class="concept-japanese concept-icon">
 
                         簡
 
@@ -265,29 +310,19 @@
 
                         Eliminamos lo innecesario
                         para que cada pieza
-                        exprese su verdadera esencia.
+                        exprese su unica y verdadera esencia.
 
                     </p>
 
                 </article>
 
-
-
-
-
                 <!-- ==========================
                         TARJETA 2
                 =========================== -->
 
-                <article class="glass-card concept-card">
+                <article class="concept-card reveal">
 
-                    <div class="concept-icon">
-
-                        <!-- Ícono -->
-
-                    </div>
-
-                    <span class="concept-japanese">
+                    <span class="concept-japanese concept-icon">
 
                         色
 
@@ -310,23 +345,13 @@
 
                 </article>
 
-
-
-
-
                 <!-- ==========================
                         TARJETA 3
                 =========================== -->
 
-                <article class="glass-card concept-card">
+                <article class="concept-card reveal">
 
-                    <div class="concept-icon">
-
-                        <!-- Ícono -->
-
-                    </div>
-
-                    <span class="concept-japanese">
+                    <span class="concept-japanese concept-icon">
 
                         形
 
@@ -350,49 +375,76 @@
 
             </div>
 
+    </div>
+
+</section>
+
+
+
+<!--==================================================
+                    SEPARADOR
+===================================================-->
+
+<section
+    id="separator"
+    class="separator reveal">
+
+    <div class="container depth-content">
+
+        <div class="separator-text">
+
+            <span class="separator-japanese">
+
+                静けさは木の声を聞かせ、家具に新しい命を宿します。
+
+            </span>
+
+            <span class="separator-spanish">
+
+                La serenidad deja oír la voz de la madera y otorga nueva vida a los muebles.
+
+            </span>
+
         </div>
 
-                <!-- Indicador de scroll -->
+    </div>
 
-        <button class="scroll-indicator"
-            aria-label="Ir a la siguiente sección">
-
-            <span></span>
-
-        </button>
-
-    </section>
+</section>
 
 
 
-<!-- ========================================= -->
-<!-- FONDO COMPARTIDO -->
-<!-- ========================================= -->
+<!--==================================================
+            FONDO COMPARTIDO
+===================================================-->
 
-<section class="showcase-background">
+<section
+    class="content-background shared-background">
+
+    <div class="jp-background depth-japanese">
+
+    <span class="jp-word jp-word-1">侘寂</span>
+
+    <span class="jp-word jp-word-2">木工</span>
+
+    <span class="jp-word jp-word-3">静寂</span>
+
+    <span class="jp-word jp-word-4">職人</span>
+
+    <span class="jp-word jp-word-5">自然</span>
+
+    </div>
+
 <!--==================================================
                     OBRAS
 ===================================================-->
 
 <section
     id="works"
-    class="works section">
+    class="section works reveal">
 
-    <div class="jp-background">
+    <div class="container2">
 
-        <span
-            class="jp-word"
-            data-parallax=".12">
-
-            匠の技
-
-        </span>
-
-    </div>
-
-    <div class="container">
-
-        <div class="section-header">
+        <div class="section-header reveal depth-header">
 
             <span class="section-tag">
 
@@ -402,8 +454,7 @@
 
             <h2 class="section-title">
 
-                Cada mueble tiene una
-                segunda historia.
+                RENACER DEL MUEBLE
 
             </h2>
 
@@ -411,52 +462,64 @@
 
                 Descubrí cómo piezas con años de historia vuelven a cobrar vida
                 mediante procesos de restauración inspirados en la estética japonesa.
-
             </p>
 
         </div>
 
-        <div class="works-showcase">
 
-                        <article
-                class="work-card"
-                data-work="0">
 
-                <div class="work-inner">
+        <div class="works-grid reveal depth-content">
 
-                    <!-- FRENTE -->
 
-                    <div class="work-front">
+
+
+<!--==================================================
+                    OBRA 01
+===================================================-->
+
+            <article
+                class="card work-card"
+                data-work="1">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <span class="card-number jp-wordcard">
+
+                            壱
+
+                        </span>
 
                         <img
-                            class="work-image image-old"
-                            src="imagenes/muebles/viejos/armario_viejo.png"
-                            alt="Horizon antes">
 
-                        <img
-                            class="work-image image-new"
-                            src="imagenes/muebles/nuevos/armario_nuevo.png"
-                            alt="Horizon restaurada">
+                        class="card-image"
 
-                        <div class="work-gradient"></div>
+                        data-before="imagenes/muebles/viejos/armario_viejo.webp"
 
-                        <div class="work-content">
+                        data-after="imagenes/muebles/nuevos/armario_nuevo.webp" 
 
-                            <span class="work-category">
+                        src="imagenes/muebles/viejos/armario_viejo.webp">
 
-                                RESTAURACIÓN
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content">
+
+                            <span class="card-tag">
+
+                                Kioku no Kura
 
                             </span>
 
-                            <h3 class="work-title">
+                            <h3 class="card-title">
 
-                                Horizon
+                                Almacén de memorias
 
                             </h3>
 
-                            <p class="work-preview">
+                            <p class="card-subtitle">
 
-                                Una pieza restaurada inspirada en la simplicidad japonesa.
+                                 Renacer y función
 
                             </p>
 
@@ -464,35 +527,37 @@
 
                     </div>
 
-                    <!-- DORSO -->
+                    <div class="card-back">
 
-                    <div class="work-back">
-
-                        <span class="work-number">
+                        <span class="card-number">
 
                             01
 
                         </span>
 
-                        <h3>
+                        <span class="card-tag">
 
-                            Horizon
+                            Kioku no Kura
+
+                        </span>
+
+                        <h3 class="card-title">
+
+                            Almacén de memorias
 
                         </h3>
 
-                        <p>
+                        <p class="card-subtitle">
 
-                            Cada restauración nace del respeto por la historia del objeto.
-                            La intervención busca conservar su esencia mientras incorpora
-                            una nueva identidad inspirada en la estética japonesa.
+                             Renacer y función
 
                         </p>
 
-                        <button class="button button-secondary">
+                        <p class="card-description2">
 
-                            Ver proyecto
+                            Un armario sólido que guarda la memoria de lo antiguo y se reinventa con planos claros y detalles vibrantes para el presente.
 
-                        </button>
+                        </p>
 
                     </div>
 
@@ -500,88 +565,101 @@
 
             </article>
 
-            
 
-            <!--==================================================
+
+
+<!--==================================================
                     OBRA 02
 ===================================================-->
 
-<article
-    class="work-card"
-    data-work="1">
+            <article
+                class="card work-card"
+                data-work="2">
 
-    <div class="work-inner">
+                <div class="card-inner">
 
-        <div class="work-front">
+                    <div class="card-front">
 
-            <img
-                class="work-image image-old"
-                src="imagenes/muebles/viejos/lampara_viejo.png"
-                alt="Akari antes">
+                        <span class="card-number jp-wordcard">
 
-            <img
-                class="work-image image-new"
-                src="imagenes/muebles/nuevos/lampara_nuevo.png"
-                alt="Akari restaurada">
+                            弐
 
-            <div class="work-gradient"></div>
+                        </span>
 
-            <div class="work-content">
+                        <img
 
-                <span class="work-category">
+                        class="card-image"
 
-                    COLOR
+                        data-before="imagenes/muebles/viejos/lampara_viejo.webp"
 
-                </span>
+                        data-after="imagenes/muebles/nuevos/lampara_nuevo.webp" 
 
-                <h3 class="work-title">
+                        src="imagenes/muebles/viejos/lampara_viejo.webp">
 
-                    Akari
+                        <div class="card-overlay"></div>
 
-                </h3>
+                        <div class="card-content">
 
-                <p class="work-preview">
+                            <span class="card-tag">
 
-                    Inspirada en la calidez y la luz de los interiores japoneses.
+                                Hikari no Michi
 
-                </p>
+                            </span>
 
-            </div>
+                            <h3 class="card-title">
 
-        </div>
+                                Camino de la luz
 
-        <div class="work-back">
+                            </h3>
 
-            <span class="work-number">
+                            <p class="card-subtitle">
 
-                02
+                                Lo antiguo y lo nuevo
 
-            </span>
+                            </p>
 
-            <h3>
+                        </div>
 
-                Akari
+                    </div>
 
-            </h3>
+                    <div class="card-back">
 
-            <p>
+                        <span class="card-number">
 
-                Una restauración que combina nuevas paletas de color con materiales nobles,
-                logrando una pieza equilibrada entre tradición y diseño contemporáneo.
+                            02
 
-            </p>
+                        </span>
 
-            <button class="button button-secondary">
+                        <span class="card-tag">
 
-                Ver proyecto
+                            Hikari no Michi
 
-            </button>
+                        </span>
 
-        </div>
+                        <h3 class="card-title">
 
-    </div>
+                            Camino de la luz
 
-</article>
+                        </h3>
+
+                        <p class="card-subtitle">
+
+                            Lo antiguo y lo nuevo
+
+                        </p>
+
+                        <p class="card-description2">
+
+                             Una lámpara que respeta su base histórica y se transforma con tonos modernos, iluminando con serenidad y contraste contemporáneo.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
 
 
 
@@ -589,307 +667,441 @@
                     OBRA 03
 ===================================================-->
 
-<article
-    class="work-card"
-    data-work="2">
+            <article
+                class="card work-card active"
+                data-work="3">
 
-    <div class="work-inner">
+                <div class="card-inner">
 
-        <div class="work-front">
+                    <div class="card-front">
 
-            <img
-                class="work-image image-old"
-                src="imagenes/muebles/viejos/sillon_viejo.png"
-                alt="Kikkō antes">
+                        <span class="card-number jp-wordcard">
 
-            <img
-                class="work-image image-new"
-                src="imagenes/muebles/nuevos/sillon_nuevo.png"
-                alt="Kikkō restaurada">
+                            参
 
-            <div class="work-gradient"></div>
+                        </span>
 
-            <div class="work-content">
+                        <img
 
-                <span class="work-category">
+                        class="card-image"
 
-                    TAPIZADO
+                        data-before="imagenes/muebles/viejos/mesita_viejo.webp"
 
-                </span>
+                        data-after="imagenes/muebles/nuevos/mesita_nuevo.webp" 
 
-                <h3 class="work-title">
+                        src="imagenes/muebles/viejos/mesita_viejo.webp">
 
-                    Kikkō
+                        <div class="card-overlay"></div>
 
-                </h3>
+                        <div class="card-content">
 
-                <p class="work-preview">
+                            <span class="card-tag">
 
-                    Geometría tradicional reinterpretada para el mobiliario.
+                                Shizuka na Shunkan
 
-                </p>
+                            </span>
 
-            </div>
+                            <h3 class="card-title">
 
-        </div>
+                                Instante silencioso
 
-        <div class="work-back">
+                            </h3>
 
-            <span class="work-number">
+                            <p class="card-subtitle">
 
-                03
+                                Función y belleza
 
-            </span>
+                            </p>
 
-            <h3>
+                        </div>
 
-                Kikkō
+                    </div>
 
-            </h3>
+                    <div class="card-back">
 
-            <p>
+                        <span class="card-number">
 
-                Inspirada en el patrón hexagonal japonés, esta restauración resalta
-                la precisión artesanal y el valor de cada detalle.
+                            03
 
-            </p>
+                        </span>
 
-            <button class="button button-secondary">
+                        <span class="card-tag">
 
-                Ver proyecto
+                            Shizuka na Shunkan
 
-            </button>
+                        </span>
 
-        </div>
+                        <h3 class="card-title">
 
-    </div>
+                            Instante silencioso
 
-</article>
+                        </h3>
 
+                        <p class="card-subtitle">
 
+                            Función y belleza
 
-<!--==================================================
+                        </p>
+
+                        <p class="card-description2">
+
+                           Una mesita de luz cotidiana transformada en pieza delicada y moderna, que aporta intimidad y estilo con cada detalle.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!--==================================================
                     OBRA 04
 ===================================================-->
 
-<article
-    class="work-card"
-    data-work="3">
+            <article
+                class="card work-card"
+                data-work="4">
 
-    <div class="work-inner">
+                <div class="card-inner">
 
-        <div class="work-front">
+                    <div class="card-front">
 
-            <img
-                class="work-image image-old"
-                src="imagenes/muebles/viejos/silla_viejo.png"
-                alt="Nagare antes">
+                        <span class="card-number jp-wordcard">
 
-            <img
-                class="work-image image-new"
-                src="imagenes/muebles/nuevos/silla_nuevo.png"
-                alt="Nagare restaurada">
+                            肆
 
-            <div class="work-gradient"></div>
+                        </span>
 
-            <div class="work-content">
+                        <img
 
-                <span class="work-category">
+                        class="card-image"
 
-                    DISEÑO
+                        data-before="imagenes/muebles/viejos/silla_viejo.webp"
 
-                </span>
+                        data-after="imagenes/muebles/nuevos/silla_nuevo.webp"
 
-                <h3 class="work-title">
+                        src="imagenes/muebles/viejos/silla_viejo.webp">
 
-                    Nagare
+                        <div class="card-overlay"></div>
 
-                </h3>
+                        <div class="card-content">
 
-                <p class="work-preview">
+                            <span class="card-tag">
 
-                    Líneas suaves inspiradas en el movimiento del agua.
+                                Wa no Za
 
-                </p>
+                            </span>
 
-            </div>
+                            <h3 class="card-title">
 
-        </div>
+                                Asiento de armonía
 
-        <div class="work-back">
+                            </h3>
 
-            <span class="work-number">
+                            <p class="card-subtitle">
 
-                04
+                                Silencio y equilibrio
 
-            </span>
+                            </p>
 
-            <h3>
+                        </div>
 
-                Nagare
+                    </div>
 
-            </h3>
+                    <div class="card-back">
 
-            <p>
+                        <span class="card-number">
 
-                Un proyecto donde la restauración busca transmitir serenidad mediante
-                formas fluidas, texturas naturales y una composición minimalista.
+                            04
 
-            </p>
+                        </span>
 
-            <button class="button button-secondary">
+                        <span class="card-tag">
 
-                Ver proyecto
+                           Wa no Za
 
-            </button>
+                        </span>
 
-        </div>
+                        <h3 class="card-title">
 
-    </div>
+                            Asiento de armonía
 
-</article>
+                        </h3>
+
+                        <p class="card-subtitle">
+
+                            Cómoda de Roble
+
+                        </p>
+
+                        <p class="card-description2">
+
+                            Una silla que conserva la esencia artesanal de la madera y se renueva con acabados claros, transmitiendo ligereza y calma en cada uso.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
 
 <!--==================================================
                     OBRA 05
 ===================================================-->
 
-<article
-    class="work-card"
-    data-work="4">
+            <article
+                class="card work-card"
+                data-work="5">
 
-    <div class="work-inner">
+                <div class="card-inner">
 
-        <div class="work-front">
+                    <div class="card-front">
 
-            <img
-                class="work-image image-old"
-                src="imagenes/muebles/viejos/mesita_viejo.png"
-                alt="Asanoha antes">
+                        <span class="card-number jp-wordcard">
 
-            <img
-                class="work-image image-new"
-                src="imagenes/muebles/nuevos/mesita_nuevo.png"
-                alt="Asanoha restaurada">
+                            伍
 
-            <div class="work-gradient"></div>
+                        </span>
 
-            <div class="work-content">
+                        <img
 
-                <span class="work-category">
+                        class="card-image"
 
-                    COLECCIÓN
+                        data-before="imagenes/muebles/viejos/sillon_viejo.webp"
 
-                </span>
+                        data-after="imagenes/muebles/nuevos/sillon_nuevo.webp" 
 
-                <h3 class="work-title">
+                        src="imagenes/muebles/viejos/sillon_viejo.webp">
 
-                    Asanoha
+                        <div class="card-overlay"></div>
 
-                </h3>
+                        <div class="card-content">
 
-                <p class="work-preview">
+                            <span class="card-tag">
 
-                    Geometría japonesa aplicada al mobiliario contemporáneo.
+                                Yasuragi no Utsuwa
 
-                </p>
+                            </span>
 
-            </div>
+                            <h3 class="card-title">
 
-        </div>
+                                Recipiente de descanso
 
-        <div class="work-back">
+                            </h3>
 
-            <span class="work-number">
+                            <p class="card-subtitle">
 
-                05
+                                Tradición y confort
 
-            </span>
+                            </p>
 
-            <h3>
+                        </div>
 
-                Asanoha
+                    </div>
 
-            </h3>
+                    <div class="card-back">
 
-            <p>
+                        <span class="card-number">
 
-                Inspirada en uno de los patrones más representativos de Japón,
-                esta pieza combina equilibrio visual y funcionalidad en una
-                restauración completamente artesanal.
+                            05
 
-            </p>
+                        </span>
 
-            <button class="button button-secondary">
+                        <span class="card-tag">
 
-                Ver proyecto
+                            Yasuragi no Utsuwa
 
-            </button>
+                        </span>
+
+                        <h3 class="card-title">
+
+                            Recipiente de descanso
+
+                        </h3>
+
+                        <p class="card-subtitle">
+
+                            Tradición y confort
+
+                        </p>
+
+                        <p class="card-description2">
+
+                            Un sillón restaurado que combina la raíz cálida de lo clásico con tapizados frescos, ofreciendo un descanso profundo y elegante.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
 
         </div>
 
     </div>
 
-</article>
-
 </section>
 
-        <!-- ==========================================
-                PERSONALIZACIÓN
-    =========================================== -->
+<!--==================================================
+                    STATS
+===================================================-->
 
-    <section class="section customization reveal" id="personalizacion">
+<section
+    id="stats"
+    class="stats reveal">
 
-        <div class="jp-background">
+    <div class="grid-system light-lines">
 
-    <span
-        class="jp-word2 layer-2"
-        data-parallax=".17">
+    <div class="grid-node"></div>
 
-        職人
+    <div class="grid-line left">
+        <div class="grid-progress"></div>
+    </div>
 
-    </span>
+    <div class="grid-line right">
+        <div class="grid-progress"></div>
+    </div>
 
-</div>
+    </div>
 
-        <div class="container reveal">
+    <div class="container">
 
-            <div class="section-header">
+        <div class="stats-grid">
 
-                <span class="section-label">
+            <!--==============================
+                    CARD 1
+            ==============================-->
 
-                    PERSONALIZACIÓN
+            <article class="glass-card stats-card">
 
-                </span>
+                <h2 class="stats-number">
 
-                <h2 class="section-title">
-
-                    TU MUEBLE,
-                    <br>
-                    TU ESTILO
+                    100%
 
                 </h2>
 
-                <p class="section-description">
+                <h3 class="stats-title">
 
-                    Elegí una combinación de colores y descubrí
-                    cómo cambian el acabado, el tapizado y la
-                    personalidad de la pieza.
+                    ARTESANAL
+
+                </h3>
+
+                <p class="stats-text">
+
+                    Cada restauración se realiza
+                    completamente de forma manual.
 
                 </p>
 
-            </div>
+            </article>
+
+
+            <!--==============================
+                    CARD 2
+            ==============================-->
+
+            <article class="glass-card stats-card">
+
+                <h2 class="stats-number">
+
+                    +250
+
+                </h2>
+
+                <h3 class="stats-title">
+
+                    MUEBLES
+
+                </h3>
+
+                <p class="stats-text">
+
+                    Piezas recuperadas
+                    y transformadas con
+                    una nueva identidad.
+
+                </p>
+
+            </article>
+
+
+            <!--==============================
+                    CARD 3
+            ==============================-->
+
+            <article class="glass-card stats-card">
+
+                <h2 class="stats-number">
+
+                    5
+
+                </h2>
+
+                <h3 class="stats-title">
+
+                    COLECCIONES
+
+                </h3>
+
+                <p class="stats-text">
+
+                    Diseños inspirados
+                    en la estética
+                    japonesa contemporánea.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
+<!--==================================================
+                PERSONALIZACIÓN
+===================================================-->
+
+<section
+    id="customization"
+    class="section customization reveal">
+
+    <div class="container2 reveal">
+
+        <div class="section-header reveal depth-header">
+
+            <span class="section-tag">
+
+                PERSONALIZACIÓN
+
+            </span>
+
+            <h2 class="section-title">
+
+                TU MUEBLE, TU ESTILO 
+
+            </h2>
+
+            <p class="section-description">
+
+                Elegí una combinación de colores y descubrí cómo cambian el acabado, el tapizado y la personalidad de la pieza.
+
+            </p>
+
+        </div>
 
 
-            <div class="customization-layout reveal">
+        <div class="customization-content reveal depth-content">
 
-                <!-- ==========================
-                        TARJETAS IZQUIERDA
-                =========================== -->
-
-                <div class="custom-column">
+                <div class="custom-column reveal">
 
                     <article class="glass-card custom-card">
 
@@ -914,10 +1126,6 @@
                         </p>
 
                     </article>
-
-
-
-
 
                     <article class="glass-card custom-card">
 
@@ -944,81 +1152,6 @@
 
                     </article>
 
-                </div>
-
-
-
-
-
-                <!-- ==========================
-                        PRODUCTO
-                =========================== -->
-
-                <div class="custom-product reveal">
-
-                    <div class="product-display"
-                    data-parallax=".10">
-
-                        <!--
-                            CAMBIAR ESTA IMAGEN
-
-                            El JS cambiará automáticamente
-                            entre silla-azul.png,
-                            silla-roja.png y
-                            silla-dorada.png
-                        -->
-
-                        <img src="imagenes/muebles/azul/silla_azul_1.png"
-                             alt="Silla personalizada"
-                             class="product-image">
-
-                    </div>
-
-
-
-
-
-                    <!-- ======================
-                            BOTONES
-                    ======================= -->
-
-                    <div class="color-selector">
-
-                        <button
-                            class="color-btn active"
-                            data-color="blue"
-                            aria-label="Color azul">
-
-                        </button>
-
-                        <button
-                            class="color-btn"
-                            data-color="red"
-                            aria-label="Color rojo">
-
-                        </button>
-
-                        <button
-                            class="color-btn"
-                            data-color="gold"
-                            aria-label="Color dorado">
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-
-
-
-                <!-- ==========================
-                        TARJETAS DERECHA
-                =========================== -->
-
-                <div class="custom-column reveal">
-
                     <article class="glass-card custom-card">
 
                         <span class="custom-card-label">
@@ -1043,10 +1176,6 @@
                         </p>
 
                     </article>
-
-
-
-
 
                     <article class="glass-card custom-card">
 
@@ -1074,564 +1203,564 @@
 
                 </div>
 
+                <div></div>
+
+            <div class="customization-viewer reveal">
+
+                <div class="customization-circle reveal"></div>
+
+                <img
+                    src="imagenes/muebles/azul/silla_azul_1.png"
+                    alt="Silla personalizada"
+                    class="customization-image"
+                    id="customization-image">
+
+                            <div class="customization-controls">
+
+                <button
+                    class="color-button active"
+                    data-color="blue"
+                    aria-label="azul"
+                    data-card="blue">
+
+                </button>
+
+                <button
+                    class="color-button"
+                    data-color="red"
+                    aria-label="rojo"
+                    data-card="red">
+
+                </button>
+
+                <button
+                    class="color-button"
+                    data-color="gold"
+                    aria-label="dorado"
+                    data-card="gold">
+
+                </button>
+
+
+            </div>    
+
             </div>
+
+
 
         </div>
 
-    </section>
 
-
-
-
-
-    <!-- ==========================================
-                    GALERÍA
-    =========================================== -->
-
-    <section class="section gallery reveal" id="galeria">
-
-        <div class="container">
-
-            <div class="section-header reveal">
-
-                <span class="section-label">
-
-                    GALERÍA
-
-                </span>
-
-                <h2 class="section-title">
-                    UNA NUEVA MIRADA
-
-                </h2>
-
-                <p class="section-description">
-
-                    Descubrí algunos trabajos,
-                    detalles y momentos
-                    que forman parte de RAÍZ.
-
-                </p>
-
-            </div>
-
-
-
-
-
-            <div class="gallery-grid reveal">
-
-                <!-- ======================
-                        CAMBIAR IMÁGENES
-                ======================= -->
-
-                <article class="gallery-item large reveal">
-
-                    <img src="imagenes/fotogaleria/gale_1.png"
-                         alt="Galería 1">
-
-                </article>
-
-
-
-
-
-                <article class="gallery-item reveal">
-
-                    <img src="imagenes/fotogaleria/gale_2.png"
-                         alt="Galería 2">
-
-                </article>
-
-
-
-
-
-                <article class="gallery-item tall reveal">
-
-                    <img src="imagenes/fotogaleria/gale_3.png"
-                         alt="Galería 3">
-
-                </article>
-
-
-
-
-
-                <article class="gallery-item reveal">
-
-                    <img src="imagenes/fotogaleria/gale_4.png"
-                         alt="Galería 4">
-
-                </article>
-
-
-
-
-
-                <article class="gallery-item wide reveal">
-
-                    <img src="imagenes/fotogaleria/gale_5.png"
-                         alt="Galería 5">
-
-                </article>
-
-
-
-
-
-                <article class="gallery-item reveal">
-
-                    <img src="imagenes/fotogaleria/gale_6.png"
-                         alt="Galería 6">
-
-                </article>
-
-
-                <article class="gallery-item reveal">
-
-                    <img src="imagenes/fotogaleria/gale_7.png"
-                         alt="Galería 7">
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-</section>
-        <!-- ==========================================
-                    CURSOS
-    =========================================== -->
-
-    <section class="section courses reveal" id="cursos">
-
-        <div class="jp-background">
-
-    <span
-        class="jp-word3 layer-3"
-        data-parallax=".17">
-
-        職人
-
-    </span>
-
-</div>
-
-        <!-- ======================================
-                FONDO DECORATIVO
-                (PNG con transparencia)
-        ======================================= -->
-
-
-
-        <div class="container reveal">
-
-            <div class="section-header"
-            data-parallax=".05">
-
-                <span class="section-label">
-
-                    CURSOS
-
-                </span>
-
-                <h2 class="section-title">
-
-                    APRENDÉ A
-                    TRANSFORMAR
-
-                </h2>
-
-                <p class="section-description">
-
-                    Descubrí técnicas de restauración,
-                    pintura y tapizado inspiradas
-                    en la estética japonesa.
-
-                </p>
-
-            </div>
-
-
-
-
-
-            <div class="courses-grid reveal">
-
-                <!-- ==========================
-                        CURSO 1
-                =========================== -->
-
-                <article class="glass-card course-card">
-
-                    <!-- CAMBIAR IMAGEN -->
-
-                    <img src="imagenes/fotocursos/curso_1.png"
-                        alt="Curso de restauración"
-                        class="course-image">
-
-                    <div class="course-content">
-
-                        <span class="course-category">
-
-                            RESTAURACIÓN
-
-                        </span>
-
-                        <h3 class="course-title">
-
-                            Diseñá la atmósfera
-
-                        </h3>
-
-                        <p class="course-text">
-
-                            Almacenamiento y lámparas que cobran vida con color, acabados y rejillas japonesas.
-
-                        </p>
-
-                        <a href="#contacto"
-                            class="button button-primary">
-
-                            Más información
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-
-
-                <!-- ==========================
-                        CURSO 2
-                =========================== -->
-
-                <article class="glass-card course-card">
-
-                    <img src="imagenes/fotocursos/curso_2.png"
-                        alt="Curso de pintura"
-                        class="course-image">
-
-                    <div class="course-content">
-
-                        <span class="course-category">
-
-                            COLOR
-
-                        </span>
-
-                        <h3 class="course-title">
-
-                            Renová lo cotidiano
-
-                        </h3>
-
-                        <p class="course-text">
-
-                            Transformá mesas y sillas con pintura, terminaciones nobles y tapizados.
-
-                        </p>
-
-                        <a href="#contacto"
-                            class="button button-primary">
-
-                            Más información
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-
-
-                <!-- ==========================
-                        CURSO 3
-                =========================== -->
-
-                <article class="glass-card course-card">
-
-                    <img src="imagenes/fotocursos/curso_3.png"
-                        alt="Curso de tapizado"
-                        class="course-image">
-
-                    <div class="course-content">
-
-                        <span class="course-category">
-
-                            TALLADO 
-
-                        </span>
-
-                        <h3 class="course-title">
-
-                            Tallado con carácter
-
-                        </h3>
-
-                        <p class="course-text">
-
-                            Grabado artesanal que convierte cada superficie en una pieza única.
-
-                        </p>
-
-                        <a href="#contacto"
-                            class="button button-primary">
-
-                            Más información
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
+    </div>
 
 </section>
 
+<!--==================================================
+                    GALERÍA
+===================================================-->
 
+<section
+    id="gallery"
+    class="section gallery reveal">
 
-    <!-- ==========================================
-                    FAQ
-    =========================================== -->
+    <div class="container2 reveal">
 
-    <section class="section faq reveal" id="faq">
+        <div class="section-header reveal depth-header">
 
-        <div class="jp-background">
+            <span class="section-tag">
 
-    <span
-        class="jp-word1 layer-1"
-        data-parallax=".17">
+                GALERÍA
 
-        職人
+            </span>
 
-    </span>
+            <h2 class="section-title">
 
-</div>
+                UNA NUEVA MIRADA
 
-        <div class="container reveal">
+            </h2>
 
-            <div class="section-header">
+            <p class="section-description">
 
-                <span class="section-label">
-
-                    PREGUNTAS
-
-                </span>
-
-                <h2 class="section-title">
-
-                    PREGUNTAS
-                    FRECUENTES
-
-                </h2>
-
-                <p class="section-description">
-
-                    Respondemos las dudas
-                    más comunes antes
-                    de comenzar.
-
-                </p>
-
-            </div>
-
-
-
-
-
-            <div class="faq-list reveal">
-
-                <!-- ==========================
-                        PREGUNTA 1
-                =========================== -->
-
-                <article class="glass-card faq-item">
-
-                    <button class="faq-question">
-
-                        <span>
-
-                            ¿Necesito experiencia previa?
-
-                        </span>
-
-                        <span class="faq-icon">
-
-                            +
-
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            No.
-                            Los cursos están pensados
-                            tanto para principiantes
-                            como para personas
-                            con experiencia.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-
-
-                <!-- ==========================
-                        PREGUNTA 2
-                =========================== -->
-
-                <article class="glass-card faq-item">
-
-                    <button class="faq-question">
-
-                        <span>
-
-                            ¿Qué materiales necesito?
-
-                        </span>
-
-                        <span class="faq-icon">
-
-                            +
-
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Recibirás una lista completa
-                            antes del comienzo del curso.
-                            También recomendamos
-                            distintos proveedores.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-
-
-                <!-- ==========================
-                        PREGUNTA 3
-                =========================== -->
-
-                <article class="glass-card faq-item">
-
-                    <button class="faq-question">
-
-                        <span>
-
-                            ¿Los cursos son presenciales?
-
-                        </span>
-
-                        <span class="faq-icon">
-
-                            +
-
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Actualmente ofrecemos
-                            cursos presenciales
-                            y también talleres
-                            especiales.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-
-
-                <!-- ==========================
-                        PREGUNTA 4
-                =========================== -->
-
-                <article class="glass-card faq-item">
-
-                    <button class="faq-question">
-
-                        <span>
-
-                            ¿Puedo restaurar mi propio mueble?
-
-                        </span>
-
-                        <span class="faq-icon">
-
-                            +
-
-                        </span>
-
-                    </button>
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Sí.
-                            En determinados cursos
-                            podrás trabajar directamente
-                            sobre una pieza propia.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
+                Descubrí algunos trabajos, detalles y momentos que forman parte de RAÍZ.
+            </p>
 
         </div>
 
-    </section>
+
+
+        <div class="gallery-grid reveal depth-content">
+
+            <figure class="gallery-item large">
+
+                <img src="imagenes/fotogaleria/gale_3.png" alt="Galería 1" class="gallery-image">
+
+            </figure>
+
+            <figure class="gallery-item">
+
+                <img src="imagenes/fotogaleria/gale_2.png" alt="Galería 2" class="gallery-image">
+
+            </figure>
+
+            <figure class="gallery-item">
+
+                <img src="imagenes/fotogaleria/gale_1.png" alt="Galería 3" class="gallery-image">
+
+            </figure>
+
+            <figure class="gallery-item tall">
+
+                <img src="imagenes/fotogaleria/gale_4.png" alt="Galería 4" class="gallery-image">
+
+            </figure>
+
+            <figure class="gallery-item wide">
+
+                <img src="imagenes/fotogaleria/gale_5.png" alt="Galería 5" class="gallery-image">
+
+            </figure>
+
+            <figure class="gallery-item">
+
+                <img src="imagenes/fotogaleria/gale_6.png" alt="Galería 6" class="gallery-image">
+
+            </figure>
+
+            <figure class="gallery-item gallery-item-wide">
+
+                <img src="imagenes/fotogaleria/gale_7.png" alt="Galería 7" class="gallery-image">
+
+            </figure>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+
+<!--==================================================
+                    CURSOS
+===================================================-->
+
+<section
+    id="courses"
+    class="section section-dark courses reveal">
+
+    </div>
+
+    <div class="container2 reveal">
+
+        <div class="section-header reveal depth-header">
+
+            <span class="section-tag">
+
+                CURSOS
+
+            </span>
+
+            <h2 class="section-title">
+
+                APRENDÉ A TRANSFORMAR
+
+            </h2>
+
+            <p class="section-description">
+
+                Descubrí técnicas de restauración, pintura y tapizado inspiradas en la estética japonesa.
+
+            </p>
+
+        </div>
+
+        <div class="courses-grid reveal depth-content">
+
+
+
+
+<!--==================================================
+                    CURSO 01
+===================================================-->
+
+            <article
+                class="card course-card"
+                data-course="1">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <img
+                            src="imagenes/fotocursos/curso_1.webp"
+                            alt="Curso inicial"
+                            class="card-image course-image">
+
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content3">
+
+                            <span class="card-tag">
+
+                                RESTAURACIÓN
+
+                            </span>
+
+                            <h3 class="card-title">
+
+                                Diseñá la atmósfera
+
+                            </h3>
+
+                            <p class="card-subtitle">
+
+                                Almacenamiento y lámparas que cobran vida con color y rejillas japonesas.
+
+                            </p>
+
+                            <ul>
+                                <li class="listacartas">Explorás técnicas de tallado artesanal.</li>
+                                <li class="listacartas">Diseñás detalles únicos en superficies de madera.</li>
+                                <li class="listacartas">Transformás muebles en piezas de autor.</li>
+                            </ul>
+
+                            <h4>$95.000 ARS</h4> 
+
+                            <button class="button button-secondary">
+                                <a href="detalle/detalle.html">Ver curso</a>  
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+
+<!--==================================================
+                    CURSO 02
+===================================================-->
+
+            <article
+                class="card course-card"
+                data-course="2">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <img
+                            src="imagenes/fotocursos/curso_2.webp"
+                            alt="Curso avanzado"
+                            class="card-image course-image">
+
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content3">
+
+                            <span class="card-tag">
+
+                                COLOR
+
+                            </span>
+
+                            <h3 class="card-title">
+
+                                Renová lo cotidiano
+
+                            </h3>
+
+                            <p class="card-subtitle">
+
+                                Transformá mesas y sillas con pintura, terminaciones nobles y tapizados.
+
+                            </p>
+
+                            <ul>
+                                <li class="listacartas">Restaurás estructuras con pintura y refuerzo.</li>
+                                <li class="listacartas">Trabajás tapizados con materiales contemporáneos.</li>
+                                <li class="listacartas">Renovás piezas para lograr comodidad y estilo.</li>
+                            </ul>
+
+                            <h4>$75.000 ARS</h4>
+
+                            <button class="button button-secondary">
+                                <a href="detalle/detalle.html">Ver curso</a>  
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+
+<!--==================================================
+                    CURSO 03
+===================================================-->
+
+            <article
+                class="card course-card"
+                data-course="3">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <img
+                            src="imagenes/fotocursos/curso_3.webp"
+                            alt="Curso profesional"
+                            class="card-image course-image">
+
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content3">
+
+                            <span class="card-tag">
+
+                                TALLADO
+
+                            </span>
+
+                            <h3 class="card-title">
+
+                                Tallado con carácter
+
+                            </h3>
+
+                            <p class="card-subtitle">
+
+                                Grabado artesanal que convierte cada superficie en una pieza única.
+
+                            </p>
+
+                            <ul>
+                                <li class="listacartas">Explorás técnicas de tallado artesanal.</li>
+                                <li class="listacartas">Detalles únicos en superficies de madera.</li>
+                                <li class="listacartas">Transformás muebles en piezas de autor.</li>
+                            </ul>
+
+                            <h4>$55.000 ARS</h4>  
+
+                            <button class="button button-secondary">
+                                <a href="detalle/detalle.html">Ver curso</a>  
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--==================================================
+                MUEBLES CÁPSULA
+===================================================-->
+
+<section
+    id="capsule"
+    class="section capsule reveal">
+
+    <div class="container reveal">
+
+        <div class="section-header reveal depth-header">
+
+            <span class="section-tag">
+
+                MUEBLES CÁPSULAS
+
+            </span>
+
+            <h2 class="section-title">
+
+                RENACER EN ESPACIOS 
+
+            </h2>
+
+            <p class="section-description">
+
+                Una colección de piezas únicas desarrolladas bajo la identidad
+                de RAÍZ, disponibles en ediciones limitadas. <br> Los muebles cápsula recuperan lo esencial, piezas rústicas que se acercan más a la tradición que a lo moderno, mostrando la belleza de lo imperfecto y lo irrepetible.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="capsule-slider reveal depth-content">
+
+        <div class="capsule-track">
+
+            <img src="imagenes/muebles/capsula/capsula_1.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_2.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_3.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_4.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_5.png" alt="" class="capsule-image">
+
+
+
+            <img src="imagenes/muebles/capsula/capsula_6.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_7.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_8.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_9.png" alt="" class="capsule-image">
+
+            <img src="imagenes/muebles/capsula/capsula_10.png" alt="" class="capsule-image">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================================================
+                        FAQ
+===================================================-->
+
+<section
+    id="faq"
+    class="section faq reveal">
+
+    <div class="container2 reveal">
+
+        <div class="section-header reveal depth-header">
+
+            <span class="section-tag">
+
+                PREGUNTAS FRECUENTES
+
+            </span>
+
+            <h2 class="section-title">
+
+                TODO LO QUE NECESITAS SABER 
+
+            </h2>
+
+        </div>
+
+        <div class="faq-list reveal depth-content">
+
+            <article class="faq-item active">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>¿Cómo comienza un proyecto de restauración?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Todo comienza con una evaluación del estado del mueble,
+                        seguida por una propuesta personalizada de restauración.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>¿Los cursos requieren experiencia previa?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Existen niveles para principiantes y para personas con
+                        experiencia previa.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>¿Se realizan trabajos personalizados?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Sí. Cada proyecto puede adaptarse al estilo,
+                        necesidades y materiales elegidos por el cliente.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
 
         <!-- ==========================================
                     CONTACTO
     =========================================== -->
 
-    <section class="section contact reveal" id="contacto">
+    <section class="section contact reveal" id="contact">
 
-        <div class="container">
+        <div class="container3 reveal">
 
-            <div class="contact-container">
+            <div class="contact-container reveal depth-content">
 
                 <!-- ==========================
                         INFORMACIÓN
@@ -1639,21 +1768,19 @@
 
                 <div class="contact-content">
 
-                    <span class="section-label">
+                    <span class="section-tag">
 
                         CONTACTO
 
                     </span>
 
-                    <h2 class="section-title">
+                    <h2 class="section-title2">
 
-                        ¿LISTO PARA DARLE
-                        UNA NUEVA VIDA
-                        A TU MUEBLE?
+                        ¿DONDE ENCONTRARNOS?
 
                     </h2>
 
-                    <p class="section-description">
+                    <p class="section-description2">
 
                         Si querés conocer más sobre los cursos,
                         realizar una restauración o hacer una consulta,
@@ -1663,7 +1790,7 @@
 
 
 
-                    <div class="contact-info">
+                    <div class="contact-info reveal">
 
                         <div class="contact-item">
 
@@ -1730,7 +1857,7 @@
                         MAPA
                 =========================== -->
 
-                <div class="contact-map">
+                <div class="contact-map reveal">
 
                     <!--
                         REEMPLAZAR ESTE BLOQUE
@@ -1751,63 +1878,110 @@
 
     </section>
 
+<!--==================================================
+                        FOOTER
+===================================================-->
 
+<footer
+    class="footer">
 
+    <div class="container">
 
+        <div class="footer-brand">
 
-    <!-- ==========================================
-                    FOOTER
-    =========================================== -->
+            <h3 class="footer-logo">
 
-    <footer class="footer">
+                RAÍZ
 
-        <div class="container">
+            </h3>
 
-            <div class="footer-container">
+            <p>
 
-                <div class="footer-brand">
+                Restauración de muebles con inspiración japonesa.
 
-                    <h2 class="footer-logo">
-
-                        RAÍZ
-
-                    </h2>
-
-                    <p class="footer-text">
-
-                        Tradición que inspira,
-                        modernidad que fluye.
-
-                    </p>
-
-                </div>
-
-                <div class="footer-copy">
-
-                    <p>
-
-                        © 2026 RAÍZ.
-                        Todos los derechos reservados.
-
-                    </p>
-
-                </div>
-
-            </div>
+            </p>
 
         </div>
 
-    </footer>
+
+
+        <nav
+            class="footer-nav">
+
+            <a href="#hero">
+
+                Inicio
+
+            </a>
+
+            <a href="#works">
+
+                Obras
+
+            </a>
+
+            <a href="#courses">
+
+                Cursos
+
+            </a>
+
+            <a href="#contact">
+
+                Contacto
+
+            </a>
+
+        </nav>
 
 
 
+        <div class="footer-social">
+
+            <a href="#" aria-label="Instagram">
+
+                Instagram
+
+            </a>
+
+            <a href="#" aria-label="Behance">
+
+                Behance
+
+            </a>
+
+            <a href="#" aria-label="Pinterest">
+
+                Pinterest
+
+            </a>
+
+        </div>
 
 
-    <!-- ==========================================
-                    JAVASCRIPT
-    =========================================== -->
 
-    <script src="script.js"></script>
+        <div class="footer-legal">
+
+            <small>
+
+                © 2026 RAÍZ · Todos los derechos reservados.
+
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+</main>
+
+
+
+<script src="script.js"></script>
+
 
 </body>
 
