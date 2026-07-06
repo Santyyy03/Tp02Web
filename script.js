@@ -434,7 +434,7 @@ const customizationData = {
     blue: {
 
         image: "imagenes/muebles/azul/silla_azul_1.png",
-        color: "#293A7C",
+        color: "#562F2F",
 
         cards: [
 
@@ -469,7 +469,7 @@ const customizationData = {
     red: {
 
         image: "imagenes/muebles/rojo/silla_roja_1.png",
-        color: "#dd1515",
+        color: "#2F4656",
 
         cards: [
 
@@ -504,7 +504,7 @@ const customizationData = {
     gold: {
 
         image: "imagenes/muebles/dorado/silla_dorado_1.png",
-        color: "#ffd359 ",
+        color: "#35562F ",
 
         cards: [
 
