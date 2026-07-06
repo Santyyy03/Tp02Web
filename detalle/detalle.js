@@ -1,22 +1,207 @@
-/*=========================================
-            TARJETAS PRINCIPALES
-=========================================*/
+/*==================================================
+            SHOWCASE MUEBLES
+==================================================*/
 
-const cards = document.querySelectorAll(".course-card");
+const furnitureButtons = document.querySelectorAll(".selector-item");
 
-cards.forEach(card=>{
+const redImage = document.getElementById("showcase-red-image");
+const blueImage = document.getElementById("showcase-blue-image");
+const greenImage = document.getElementById("showcase-green-image");
 
-    card.addEventListener("click",()=>{
 
-        if(card.classList.contains("active")) return;
+/*==================================================
+            BASE DE DATOS
+==================================================*/
 
-        const active=document.querySelector(".course-card.active");
+const furniture = {
 
-        active.classList.remove("active");
+    chair:{
 
-        card.classList.add("active");
+        red:"../imagenes/showcase/silla_roja.png",
+        blue:"../imagenes/showcase/silla_azul.png",
+        green:"../imagenes/showcase/silla_verde.png"
 
-        reorderCards(card);
+    },
+
+    lamp:{
+
+        red:"../imagenes/showcase/lampara_roja.png",
+        blue:"../imagenes/showcase/lampara_azul.png",
+        green:"../imagenes/showcase/lampara_verde.png"
+
+    },
+
+    table:{
+
+        red:"../imagenes/showcase/mesa_roja.png",
+        blue:"../imagenes/showcase/mesa_azul.png",
+        green:"../imagenes/showcase/mesa_verde.png"
+
+    },
+
+    shelf:{
+
+        red:"../imagenes/showcase/estanteria_roja.png",
+        blue:"../imagenes/showcase/estanteria_azul.png",
+        green:"../imagenes/showcase/estanteria_verde.png"
+
+    },
+
+    bench:{
+
+        red:"../imagenes/showcase/banco_rojo.png",
+        blue:"../imagenes/showcase/banco_azul.png",
+        green:"../imagenes/showcase/banco_verde.png"
+
+    }
+
+};
+
+
+
+/*==================================================
+            CAMBIO IMAGEN
+==================================================*/
+
+function switchImage(img,newSrc){
+
+    img.classList.add("switching");
+
+    setTimeout(()=>{
+
+        img.src=newSrc;
+
+        img.onload=()=>{
+
+            img.classList.remove("switching");
+
+        };
+
+    },220);
+
+}
+
+
+
+/*==================================================
+            CAMBIO MUEBLE
+==================================================*/
+
+function changeFurniture(name){
+
+    switchImage(redImage,furniture[name].red);
+
+    switchImage(blueImage,furniture[name].blue);
+
+    switchImage(greenImage,furniture[name].green);
+
+}
+
+
+
+/*==================================================
+            BOTONES
+==================================================*/
+
+furnitureButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        furnitureButtons.forEach(btn=>{
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+        changeFurniture(button.dataset.furniture);
+
+    });
+
+});
+
+
+/*==================================================
+                COURSE TIMELINE
+==================================================*/
+
+const timelineStops = document.querySelectorAll(".timeline-stop");
+const timelineCards = document.querySelectorAll(".timeline-card");
+const timelineSegments = document.querySelectorAll(".timeline-segment");
+
+function activateTimeline(step){
+
+    /*==============================
+            STOPS
+    ==============================*/
+
+    timelineStops.forEach((stop,index)=>{
+
+        stop.classList.remove("active");
+        stop.classList.remove("visited");
+
+        if(index + 1 < step){
+
+            stop.classList.add("visited");
+
+        }
+
+        if(index + 1 === step){
+
+            stop.classList.add("active");
+
+        }
+
+    });
+
+
+    /*==============================
+            TARJETAS
+    ==============================*/
+
+    timelineCards.forEach((card,index)=>{
+
+        card.classList.remove("active");
+
+        if(index + 1 === step){
+
+            card.classList.add("active");
+
+        }
+
+    });
+
+
+    /*==============================
+            SEGMENTOS
+    ==============================*/
+
+    timelineSegments.forEach((segment,index)=>{
+
+        segment.classList.remove("active");
+
+        if(index < step - 1){
+
+            segment.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+
+/*==================================================
+            CLICK EN STOPS
+==================================================*/
+
+timelineStops.forEach((stop,index)=>{
+
+    stop.addEventListener("click",()=>{
+
+        activateTimeline(index + 1);
 
     });
 
@@ -24,250 +209,193 @@ cards.forEach(card=>{
 
 
 
-/*=========================================
-        REORDENAR TARJETAS
-=========================================*/
+/*==================================================
+            CLICK EN TARJETAS
+==================================================*/
 
-function reorderCards(activeCard){
+timelineCards.forEach((card,index)=>{
 
-    const container=document.querySelector(".customization-slider");
+    card.addEventListener("click",()=>{
 
-    const allCards=[...container.querySelectorAll(".course-card")];
+        activateTimeline(index + 1);
 
-    const activeIndex=allCards.indexOf(activeCard);
-
-    if(activeIndex===1) return;
-
-    if(activeIndex===0){
-
-        container.appendChild(allCards[0]);
-
-    }
-
-    else if(activeIndex===2){
-
-        container.insertBefore(allCards[2],allCards[1]);
-
-    }
-
-}
-
-
-
-
-
-/*=========================================
-        DATOS
-=========================================*/
-
-const cardData={
-
-wood:[
-
-{
-
-title:"Nogal Oscuro",
-
-subtitle:"Acabado profundo",
-
-description:"Ideal para un estilo clásico con mucha presencia.",
-
-image:"img/cursos/detalle/madera-oscura.webp"
-
-},
-
-{
-
-title:"Roble Claro",
-
-subtitle:"Aspecto natural",
-
-description:"Aporta luminosidad y una estética contemporánea.",
-
-image:"img/cursos/detalle/madera-clara.webp"
-
-},
-
-{
-
-title:"Negro",
-
-subtitle:"Terminación moderna",
-
-description:"Perfecto para contrastes con textiles claros.",
-
-image:"img/cursos/detalle/madera-negra.webp"
-
-}
-
-],
-
-
-
-color:[
-
-{
-
-title:"Azul Índigo",
-
-subtitle:"Inspiración japonesa",
-
-description:"Transmite serenidad y equilibrio.",
-
-image:"img/cursos/detalle/color-azul.webp"
-
-},
-
-{
-
-title:"Rojo Carmesí",
-
-subtitle:"Personalidad",
-
-description:"Ideal para destacar una pieza protagonista.",
-
-image:"img/cursos/detalle/color-rojo.webp"
-
-},
-
-{
-
-title:"Dorado",
-
-subtitle:"Elegancia",
-
-description:"Genera un aspecto sofisticado.",
-
-image:"img/cursos/detalle/color-dorado.webp"
-
-}
-
-],
-
-
-
-pattern:[
-
-{
-
-title:"Kikko",
-
-subtitle:"Fortaleza",
-
-description:"Inspirado en el caparazón de la tortuga.",
-
-image:"img/cursos/detalle/kikko.webp"
-
-},
-
-{
-
-title:"Asanoha",
-
-subtitle:"Crecimiento",
-
-description:"Uno de los patrones japoneses más utilizados.",
-
-image:"img/cursos/detalle/asanoha.webp"
-
-},
-
-{
-
-title:"Seigaiha",
-
-subtitle:"Mar",
-
-description:"Representa las olas del océano.",
-
-image:"img/cursos/detalle/seigaiha.webp"
-
-}
-
-]
-
-};
-
-
-
-
-
-/*=========================================
-        SELECTORES
-=========================================*/
-
-const selectors=document.querySelectorAll(".selector");
-
-selectors.forEach(button=>{
-
-button.addEventListener("click",(e)=>{
-
-e.stopPropagation();
-
-const type=button.dataset.type;
-
-const index=button.dataset.index;
-
-const card=button.closest(".course-card");
-
-updateCard(card,type,index);
-
-});
+    });
 
 });
 
 
 
+/*==================================================
+            ESTADO INICIAL
+==================================================*/
+
+if(timelineStops.length){
+
+    activateTimeline(1);
+
+}
+
+/*==================================================
+                PROGRAM GALLERY
+==================================================*/
+
+const programCards = document.querySelectorAll(".program-card");
+const programItems = document.querySelectorAll(".program-item");
+const programIcons = document.querySelectorAll(".program-icon");
+
+let currentProgram = 0;
 
 
-/*=========================================
-        CAMBIAR CONTENIDO
-=========================================*/
 
-function updateCard(card,type,index){
+/*==================================================
+                ACTUALIZAR
+==================================================*/
 
-card.querySelectorAll(".selector").forEach(btn=>{
+function updateProgramGallery(){
 
-btn.classList.remove("active");
+    programCards.forEach(card=>{
 
-});
+        card.classList.remove(
+            "active",
+            "prev",
+            "next",
+            "hidden"
+        );
 
-card.querySelector(`[data-index="${index}"]`).classList.add("active");
+    });
 
-const data=cardData[type][index];
 
-card.querySelector(".card-preview").src=data.image;
 
-card.querySelector(".card-title").textContent=data.title;
+    programItems.forEach(item=>{
 
-card.querySelector(".card-subtitle").textContent=data.subtitle;
+        item.classList.remove("active");
 
-card.querySelector(".card-description").textContent=data.description;
+    });
+
+
+
+    programIcons.forEach(icon=>{
+
+        icon.textContent="−";
+
+    });
+
+
+
+    const prev =
+        (currentProgram - 1 + programCards.length) %
+        programCards.length;
+
+    const next =
+        (currentProgram + 1) %
+        programCards.length;
+
+
+
+    programCards[currentProgram].classList.add("active");
+
+    programCards[prev].classList.add("prev");
+
+    programCards[next].classList.add("next");
+
+
+
+    programCards.forEach((card,index)=>{
+
+        if(
+            index!==currentProgram &&
+            index!==prev &&
+            index!==next
+        ){
+
+            card.classList.add("hidden");
+
+        }
+
+    });
+
+
+
+    programItems[currentProgram].classList.add("active");
+
+    programIcons[currentProgram].textContent="✓";
 
 }
 
 
 
+/*==================================================
+            CLICK IMÁGENES
+==================================================*/
 
+programCards.forEach((card,index)=>{
 
-/*=========================================
-            TIMELINE
-=========================================*/
+    card.addEventListener("click",()=>{
 
-const timeline=document.querySelectorAll(".timeline-card");
+        currentProgram=index;
 
-timeline.forEach(item=>{
+        updateProgramGallery();
 
-item.addEventListener("click",()=>{
-
-document.querySelectorAll(".timeline-card").forEach(card=>{
-
-card.classList.remove("active");
+    });
 
 });
 
-item.classList.add("active");
+
+
+/*==================================================
+            CLICK LISTA
+==================================================*/
+
+programItems.forEach((item,index)=>{
+
+    item.addEventListener("click",()=>{
+
+        currentProgram=index;
+
+        updateProgramGallery();
+
+    });
 
 });
+
+
+
+/*==================================================
+            ESTADO INICIAL
+==================================================*/
+
+if(programCards.length){
+
+    updateProgramGallery();
+
+}
+
+/*==================================================
+                        FAQ
+==================================================*/
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector(".faq-question");
+
+
+
+    question.addEventListener("click", () => {
+
+        faqItems.forEach(currentItem => {
+
+            if(currentItem !== item){
+
+                currentItem.classList.remove("active");
+
+            }
+
+        });
+
+
+
+        item.classList.toggle("active");
+
+    });
 
 });

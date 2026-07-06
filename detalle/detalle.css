@@ -39,117 +39,185 @@
 }
 
 
-
-
-/*=========================================
-                HERO
-=========================================*/
+/*==================================================
+                HERO DETALLE
+==================================================*/
 
 .course-hero{
 
-    min-height:var(--course-hero-height);
+    min-height:90vh;   
 
     display:flex;
 
     align-items:center;
 
-    padding-top:140px;
+    overflow:hidden;
+
+    position:relative;
 
 }
 
-.section-tag-hero {
-    color: var(--color-primary);
-
-}
-
-#hero {
-background-color: var(--color-light);}
-
-
-
-.hero-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:80px;
-
-    align-items:center;
-
-}
-
-
-
-.hero-content{
+.hero-content2{
 
     display:flex;
 
     flex-direction:column;
 
-    align-items:flex-start;
+    gap:32px;
+
+    max-width:1250px;
 
 }
 
+.container4{
+
+    width: 1640px;  
+
+    margin-inline:auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 100px;  
 
 
-.breadcrumb{
+}
+
+.hero-grid{
 
     display:flex;
 
-    gap:.6rem;
-
-    margin-bottom:2rem;
-
-    font-size:.9rem;
-
-    opacity:.7;
+    align-items:center;
 
 }
 
+/*==================================================
+                VISUAL
+==================================================*/
 
+.detail-hero-visual{
 
-.breadcrumb a{
+    position:relative;
 
-    text-decoration:none;
+    display:flex;
 
-    color:inherit;
+    justify-content:center;
+
+    align-items: flex-end;
+
+ 
+}
+
+/*==================================================
+                CÍRCULO
+==================================================*/
+
+.detail-hero-circle{
+
+     position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        180deg,
+        var(--color-accent) 0%,
+        var(--color-light) 100%
+    );
+
+    z-index:1;
+
+    filter:blur(2px);
 
 }
 
+/*==================================================
+                SOFÁ
+==================================================*/
 
+.detail-hero-sofa{
 
-.breadcrumb strong{
+    position:relative;
 
-    color:var(--color-primary);
+    z-index:2;
 
-    font-weight:600;
+    transition:
 
-}
-
-
-
-.course-hero h1{
-
-    margin-bottom:2rem;
-
-    max-width:650px;
+        transform .6s cubic-bezier(.22,.61,.36,1);
 
 }
 
+.detail-hero-sofa img{
+ 
+    width:840px; 
 
-
-.hero-description{
-
-    max-width:620px;
-
-    line-height:1.9;
-
-    margin-bottom:3rem;
+    display:block;
 
 }
 
+.detail-hero-sofa:hover{
 
+    transform:
+
+        scale(1.04)
+
+        translateY(-8px);
+
+}
+
+.detail-hero-sofa{
+
+    transform:translateY(30px);
+
+}
+
+.detail-hero-sofa:hover{
+
+    transform:
+
+        translateY(22px)
+
+        scale(1.04);
+
+}
+
+/*==================================================
+                JAPONÉS
+==================================================*/
+
+.detail-hero-japanese{
+
+    position:absolute;
+
+    right:-75px; 
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+    z-index:3;
+
+}
+
+.detail-hero-japanese span{
+
+    writing-mode:vertical-rl;
+
+    font-family:var(--font-japanese); 
+
+    font-size:2.4rem;
+
+    color:var(--color-accent3);
+
+    letter-spacing:.15em;
+
+}
 
 .hero-badges{
 
@@ -189,7 +257,7 @@ background-color: var(--color-light);}
 
     text-transform:uppercase;
 
-    color: var(--color-secondary);
+    color: var(--color-tertiary);
 
 }
 
@@ -204,57 +272,9 @@ background-color: var(--color-light);}
 }
 
 
-
-.hero-buttons{
-
-    display:flex;
-
-    gap:20px;
-
-}
-
-
-
-.hero-image{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-}
-
-
-
-.hero-image img{
-
-    width:100%;
-
-    max-width:620px;
-
-    display:block;
-
-    transition:.6s;
-
-}
-
-
-
-.hero-image:hover img{
-
-    transform:scale(1.03);
-
-}
-
-
 /*=========================================
                 STATS
 =========================================*/
-
-.course-stats{
-
-    padding-block:100px;
-
-}
 
 
 .stats-grid{
@@ -271,7 +291,7 @@ background-color: var(--color-light);}
 
 .course-stats {
 
-    background-color: var(--color-accent2);
+    background-color: var(--color-accent);
 }
 
 
@@ -301,7 +321,7 @@ text-align: center;
 
     line-height:1;
 
-    color:var(--color-primary);
+    color:var(--color-light);
 
 }
 
@@ -313,7 +333,7 @@ text-align: center;
 
     height:2px;
 
-    background:var(--color-primary);
+    background:var(--color-light);
 
     margin:18px 0 22px;
 
@@ -342,481 +362,362 @@ text-align: center;
 
 
 
-/*=========================================
-            SECTION HEADER
-=========================================*/
+/*==================================================
+                SHOWCASE
+==================================================*/
 
-#works {
-    padding-top: 100px;
+.course-showcase{
+
+    padding:140px 0;
+
+    display: flex;
+
+    justify-content: center;
 
 }
 
-.section-header{
 
-    max-width:1400px;
 
-    margin:0 auto 50px;  
+.showcase-header{
 
     text-align:center;
 
-}
+    max-width:760px;
 
-
-
-.section-header h2{
-
-    font-weight: 500;
+    margin:0 auto 80px;
 
 }
 
 
 
-.section-description{
+.showcase-description{
 
-    max-width:640px;
+    max-width:620px;
 
-    margin:auto;
-
-    line-height:1.9;
+    margin:24px auto 0;
 
 }
+
+
 
 /*==================================================
-            PERSONALIZACIÓN
+                GRID
 ==================================================*/
 
-.course-customization{
-
-    overflow:hidden;
-
-}
-
-.container-per {
-
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    
-}
-
-
-
-/*=========================================
-            CONTENEDOR
-=========================================*/
-
-.customization-slider{
+.showcase-grid{
 
     display:grid;
 
-    grid-template-columns:0.85fr 1.2fr 0.85fr;
+    grid-template-columns:repeat(3,1fr);
 
-    align-items:center;
+    gap:32px;
 
-    gap:30px;
+    margin-bottom:70px;
 
 }
 
 
 
-/*=========================================
-                TARJETA
-=========================================*/
+/*==================================================
+                TARJETAS
+==================================================*/
 
-.course-card{
+.showcase-card{
 
-    position:relative;
+    overflow:hidden;
 
-    aspect-ratio:0.75;
+    display:flex;
 
-    transform-style:preserve-3d;
+    flex-direction:column;
+
+    justify-content:space-between;
 
     transition:
-        transform .55s ease,
-        scale .45s ease,
-        opacity .35s ease;
-
-    cursor:pointer;
+        transform .45s ease,
+        box-shadow .45s ease;
 
 }
 
 
 
-/*=========================================
-        TARJETA ACTIVA
-=========================================*/
-
-.course-card.active{
-
-    scale:1.05;
-    z-index:5;
-
-}
-
-
-
-/*=========================================
-        TARJETAS LATERALES
-=========================================*/
-
-.course-card:not(.active){
-
-    scale:.88;
-    opacity:.8;
-
-}
-
-
-
-.course-card:hover{
+.showcase-card:hover{
 
     transform:translateY(-8px);
 
 }
 
+.showcase-red{
 
-
-/*=========================================
-        CARAS
-=========================================*/
-
-.course-card-front,
-.course-card-back{
-
-    position:absolute;
-
-    inset:0;
-
-    border:1px solid rgba(0,0,0,.08);
-
-    background:var(--color-light);
-
-    backface-visibility:hidden;
-
-    overflow:hidden;
-
-    display:flex;
-    flex-direction:column;
+    background:#562F2F;
 
 }
 
+.showcase-blue{
 
-
-/*=========================================
-            DORSO
-=========================================*/
-
-.course-card-back{
-
-    transform:rotateY(180deg);
+    background:#2F4656;
 
 }
 
+.showcase-green{
 
-
-.course-card.active .course-card-front{
-
-    transform:rotateY(180deg);
+    background:#35562F;
 
 }
 
+.showcase-image{
 
-
-.course-card.active .course-card-back{
-
-    transform:rotateY(360deg);
-
-}
-
-
-
-/*=========================================
-        TRANSICIONES
-=========================================*/
-
-.course-card-front,
-.course-card-back{
-
-    transition:transform .7s cubic-bezier(.22,.8,.22,1);
-
-}
-
-
-
-/*=========================================
-            IMAGEN
-=========================================*/
-
-.course-card img{
-
-    width:100%;
-    height:340px;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-
-
-/*=========================================
-        TÍTULO FRENTE
-=========================================*/
-
-.course-card-title{
-
-    padding:28px;
-
-}
-
-
-
-.course-card-title h3{
-
-    margin-bottom:8px;
-
-}
-
-
-
-.course-card-title span{
-
-    opacity:.6;
-
-    font-size:.95rem;
-
-}
-
-
-
-/*=========================================
-        CONTENIDO DORSO
-=========================================*/
-
-.card-content{
-
-    padding:28px;
-
-    flex:1;
-
-}
-
-
-
-.card-title{
-
-    margin-bottom:8px;
-
-}
-
-
-
-.card-subtitle{
-
-    color:var(--color-secondary);
-
-    margin-bottom:20px;
-
-    font-size:1rem;
-
-    font-weight:500;
-
-}
-
-.section-title3 {
-    
-    color: var(--color-light);
-
-    font-family:var(--font-display);
-
-    font-size:var(--fs-title);
-
-    font-weight:var(--fw-medium);
-
-    line-height:1.05;
-
-    max-width: 1400px;
-
-    text-align: center;
-}
-
-.card-description{
-
-    line-height:1.8;
-
-}
-
-
-
-/*=========================================
-        SELECTORES
-=========================================*/
-
-.selector-buttons{
+    height:360px;
 
     display:flex;
 
     justify-content:center;
 
-    gap:14px;
+    align-items:center;
 
-    padding:28px;
+    overflow:hidden;
+
+    padding:40px;
 
 }
 
 
 
-/*=========================================
-            BOTONES
-=========================================*/
+.showcase-image img{
 
-.selector{
+    width:100%;
 
-    width:18px;
-    height:18px;
+    max-width:280px;
 
-    border-radius:50%;
+    object-fit:contain;
+
+    transition:
+
+        transform .45s ease,
+
+        opacity .45s ease;
+
+}
+
+.showcase-info{
+
+    padding:30px;
+
+    background:var(--color-primary);
+
+    display: flex;
+
+    justify-content: center;
+
+
+}
+
+
+
+.showcase-label{
+
+    color:var(--color-accent3);
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.showcase-selector{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:30px;
+
+}
+
+.selector-item{
+
+    width:90px;
+
+    height:90px;
 
     border:none;
 
+    background:none;
+
     cursor:pointer;
+
+    transition:.4s ease;
+
+    opacity:.45;
+
+    filter:grayscale(100%);
+
+}
+
+.selector-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+.selector-item.active{
+
+    transform:
+
+        translateY(-12px)
+
+        scale(1.1);
+
+    opacity:1;
+
+    filter:none;
+
+}
+
+/*==================================================
+                ANIMACIONES TARJETAS
+==================================================*/
+
+.showcase-card{
+
+    position:relative;
+
+    box-shadow:0 14px 34px rgba(0,0,0,.08);
+
+}
+
+.showcase-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 24px 46px rgba(0,0,0,.15);
+
+}
+
+/*==================================================
+                IMÁGENES
+==================================================*/
+
+.showcase-image{
+
+    position:relative;
+
+}
+
+.showcase-image img{
+
+    display:block;
+
+    transform:scale(1);
+
+    opacity:1;
+
+    transition:
+
+        transform .45s cubic-bezier(.22,.61,.36,1),
+
+        opacity .35s ease;
+
+}
+
+.showcase-image img.switching{
+
+    opacity:0;
+
+    transform:scale(.92);
+
+}
+
+/*==================================================
+                SELECTOR
+==================================================*/
+
+.selector-item{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.selector-item img{
+
+    transition:
+
+        transform .45s,
+
+        filter .45s,
+
+        opacity .45s;
+
+}
+
+.selector-item:not(.active) img{
+
+    filter:
+
+        grayscale(100%)
+
+        brightness(.75);
+
+    opacity:.55;
+
+}
+
+.selector-item:hover img{
+
+    transform:translateY(-6px);
+
+}
+
+.selector-item.active img{
+
+    filter:none;
+
+    opacity:1;
+
+    transform:
+
+        translateY(-12px)
+
+        scale(1.08);
+
+}
+
+.selector-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-18px;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--color-accent);
 
     transition:.35s;
 
 }
 
+.selector-item.active::after{
 
-
-/*=========================================
-        ESTADOS
-=========================================*/
-
-.selector:hover{
-
-    transform:scale(1.15);
-
-}
-
-
-
-.selector.active{
-
-    scale:1.25;
-
-}
-
-
-
-/*=========================================
-        COLORES
-=========================================*/
-
-/* madera */
-
-[data-type="wood"][data-index="0"]{
-
-    background:#593C2A;
-
-}
-
-[data-type="wood"][data-index="1"]{
-
-    background:#B98A5A;
-
-}
-
-[data-type="wood"][data-index="2"]{
-
-    background:#232323;
-
-}
-
-
-
-/* tapizados */
-
-[data-type="color"][data-index="0"]{
-
-    background:#293A7C;
-
-}
-
-[data-type="color"][data-index="1"]{
-
-    background:#BE1818;
-
-}
-
-[data-type="color"][data-index="2"]{
-
-    background:#FFD359;
-
-}
-
-
-
-/* patrones */
-
-[data-type="pattern"]{
-
-    background-size:cover;
-
-    background-position:center;
-
-}
-
-[data-index="0"][data-type="pattern"]{
-
-    background-image:url("../img/cursos/detalle/ui/kikko.jpg");
-
-}
-
-[data-index="1"][data-type="pattern"]{
-
-    background-image:url("../img/cursos/detalle/ui/asanoha.jpg");
-
-}
-
-[data-index="2"][data-type="pattern"]{
-
-    background-image:url("../img/cursos/detalle/ui/seigaiha.jpg");
-
-}
-
-
-
-/*=========================================
-        RESPONSIVE
-=========================================*/
-
-@media(max-width:1050px){
-
-.customization-slider{
-
-grid-template-columns:1fr;
-
-gap:40px;
-
-}
-
-.course-card{
-
-max-width:520px;
-
-width:100%;
-
-margin:auto;
-
-}
-
-.course-card:not(.active){
-
-scale:1;
-
-opacity:1;
-
-}
+    width:70%;
 
 }
 
@@ -830,39 +731,27 @@ opacity:1;
 
 }
 
-
+/*==================================================
+                PROGRAMA
+==================================================*/
 
 .content-grid{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
-
-    gap:80px;
+    grid-template-columns:1fr 520px;
 
     align-items:center;
 
-}
-
-
-
-.content-text{
-
-    display:flex;
-
-    flex-direction:column;
+    gap:350px;  
 
 }
 
 
 
-.content-text h2{
-
-    margin:20px 0 40px;
-
-}
-
-
+/*==================================================
+                LISTA
+==================================================*/
 
 .content-list{
 
@@ -872,71 +761,223 @@ opacity:1;
 
     gap:22px;
 
-    list-style:none;
+    margin-top:48px;
 
     padding:0;
 
-    margin:0;
+    list-style:none;
 
 }
 
 
 
-.content-list li{
-
-    position:relative;
-
-    padding-left:34px;
-
-    line-height:1.9;
-
-}
-
-
-
-.content-list li::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    top:13px;
-
-    width:14px;
-
-    height:2px;
-
-    background:var(--color-primary);
-
-}
-
-
-
-.content-image{
+.program-item{
 
     display:flex;
 
-    justify-content:flex-end;
+    align-items:center;
+
+    gap:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
 
 }
 
 
 
-.content-image img{
+.program-item span:last-child{
+
+    transition:.35s;
+
+}
+
+
+
+.program-icon{
+
+    width:22px;
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:rgba(255,255,255,.35);
+
+    transition:.35s;
+
+}
+
+
+
+/*==================================================
+            ESTADOS LISTA
+==================================================*/
+
+.program-item.active{
+
+    color:var(--color-accent);
+
+}
+
+
+
+.program-item.active .program-icon{
+
+    color:var(--color-accent);
+
+}
+
+
+
+.program-item:hover{
+
+    transform:translateX(10px);
+
+}
+
+
+
+/*==================================================
+            GALERÍA
+==================================================*/
+
+.program-gallery{
+
+    position:relative;
+
+    width:520px;
+
+    height:520px;
+
+    margin-inline:auto;
+
+}
+
+
+
+/*==================================================
+                TARJETAS
+==================================================*/
+
+.program-card{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:
+        transform .55s cubic-bezier(.22,.61,.36,1),
+        opacity .45s,
+        filter .45s;
+
+}
+
+
+
+.program-card img{
 
     width:100%;
 
-    max-width:620px;
+    height:100%;
+
+    object-fit:cover;
 
     display:block;
 
 }
 
+.program-card.prev,
+.program-card.next{
+
+    filter:grayscale(100%);
+
+    opacity:.75;
+
+    box-shadow:
+
+        0 10px 20px rgba(0,0,0,.08);
+
+    filter:
+
+        grayscale(100%)
+
+        blur(1px);
+
+}
+
+.program-card.active{
+
+    filter:none;
+
+}
+
+.program-card.active{
+
+    box-shadow:
+
+        0 30px 60px rgba(0,0,0,.18);
+
+}
 
 
 
+/*==================================================
+            POSICIONES
+==================================================*/
+
+.program-card.active{
+
+    z-index:5;
+
+    transform:
+        translateX(0)
+        scale(1);
+
+}
+
+
+
+.program-card.prev{
+
+    z-index:4;
+
+    transform:
+        translateX(-85px)
+        translateY(24px)
+        scale(.88);
+
+}
+
+
+
+.program-card.next{
+
+    z-index:4;
+
+    transform:
+        translateX(85px)
+        translateY(24px)
+        scale(.88);
+
+}
+ 
+
+
+.program-card.hidden{
+
+    opacity:0.15;
+
+    pointer-events:none;
+
+    transform:scale(.85);
+
+}
 
 /*==================================================
                 TIMELINE
@@ -956,11 +997,206 @@ opacity:1;
 
 }
 
+/*==================================================
+                    TIMELINE
+==================================================*/
+
+.course-timeline{
+
+    padding:140px 0;
+
+}
 
 
-.timeline-wrapper{
+
+.course-timeline .container{
+
+    max-width:1380px;
+
+}
+
+
+
+/*==================================================
+                NAVEGACIÓN
+==================================================*/
+
+.timeline-navigation{
 
     position:relative;
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:90px auto 80px;
+
+}
+
+/*==================================================
+                    LÍNEA
+==================================================*/
+
+.timeline-track{
+
+    position:absolute;
+
+    left:calc(10% + 34px);
+
+    right:calc(10% + 34px);
+
+    top:34px;
+
+    height:2px;
+
+    background:rgba(0,0,0,.15);
+
+    z-index:1;
+
+}
+
+
+
+/*==================================================
+                SEGMENTOS
+==================================================*/
+
+.timeline-segment{
+
+    position:absolute;
+
+    top:0;
+
+    height:100%;
+
+    background:var(--color-accent);
+
+    transform:scaleX(0);
+
+    transform-origin:left center;
+
+    transition:transform .45s ease;
+
+}
+
+/* Segmento 1 */
+.timeline-segment[data-segment="1"]{
+
+    left:0;
+
+    width:25%;
+
+}
+
+/* Segmento 2 */
+.timeline-segment[data-segment="2"]{
+
+    left:25%;
+
+    width:25%;
+
+}
+
+/* Segmento 3 */
+.timeline-segment[data-segment="3"]{
+
+    left:50%;
+
+    width:25%;
+
+}
+
+/* Segmento 4 */
+.timeline-segment[data-segment="4"]{
+
+    left:75%;
+
+    width:25%;
+
+}
+
+.timeline-segment.active{
+
+    transform:scaleX(1);
+
+}
+
+/*==================================================
+                    STOPS
+==================================================*/
+
+.timeline-stop{
+
+    width:68px;
+
+    height:68px;
+
+    background:var(--color-light);
+
+    border:2px solid rgba(0,0,0,.18);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:5;
+
+    transition:.35s;
+
+    position:relative;
+
+    z-index:5;
+
+    justify-self:center;
+}
+
+.timeline-stops{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    align-items:center;
+
+    justify-items:center;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.timeline-stop span{
+
+    font-weight:700;
+
+    font-size:1rem;
+
+}
+
+
+
+.timeline-stop:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*==================================================
+                TARJETAS
+==================================================*/
+
+.timeline-cards{
 
     display:flex;
 
@@ -968,132 +1204,67 @@ opacity:1;
 
     align-items:flex-start;
 
-    gap:18px;
-
-    padding-top:70px;
+    gap:28px;
 
 }
 
 
 
-.timeline-line{
-
-    position:absolute;
-
-    left:0;
-
-    right:0;
-
-    top:104px;
-
-    height:2px;
-
-    background:rgba(0,0,0,.12);
-
-    z-index:0;
-
-}
-
-
-
-/*=========================================
-            TARJETAS
-=========================================*/
+/*==================================================
+                CARD
+==================================================*/
 
 .timeline-card{
 
-    position:relative;
-
     width:220px;
+
+    height:250px;
 
     flex-shrink:0;
 
     cursor:pointer;
 
-    transition:.45s;
-
-    z-index:2;
+    perspective:1200px;
 
 }
 
 
 
-.timeline-card.active{
+.timeline-card-inner{
 
-    transform:translateY(-10px);
+    width:100%;
 
-}
+    height:100%;
 
+    position:relative;
 
-
-.timeline-card:hover{
-
-    transform:translateY(-6px);
+    transform-style:preserve-3d;
 
 }
 
 
 
-/*=========================================
-            STOP
-=========================================*/
+.timeline-front,
 
-.timeline-stop{
+.timeline-back{
 
-    width:56px;
+    position:absolute;
 
-    height:56px;
-
-    margin:auto;
-
-    margin-bottom:40px;
-
-    border:2px solid var(--color-primary);
-
-    background:var(--color-light);
-
-    color:var(--color-primary);
+    inset:0;
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    font-weight:700;
+    align-items:center;
 
-    transition:.4s;
-
-}
-
-
-
-.timeline-card.active .timeline-stop{
-
-    background:var(--color-primary);
-
-    color:var(--color-light);
-
-}
-
-
-
-/*=========================================
-            CARAS
-=========================================*/
-
-.timeline-front,
-.timeline-back{
-
-    border:1px solid rgba(0,0,0,.08);
-
-    padding:26px;
-
-    min-height:180px;
+    flex-direction:column;
 
     background:var(--color-light);
 
-    transition:.6s;
+    border:1px solid rgba(0,0,0,.08);
+
+    padding:30px;
 
     backface-visibility:hidden;
 
@@ -1101,21 +1272,7 @@ opacity:1;
 
 
 
-.timeline-front{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-}
-
-
-
-.timeline-front span{
+.timeline-week{
 
     font-size:1rem;
 
@@ -1131,15 +1288,144 @@ opacity:1;
 
 .timeline-back{
 
-    position:absolute;
+    transform:rotateY(180deg);
 
-    inset:96px 0 auto;
+}
 
-    opacity:0;
 
-    pointer-events:none;
+
+.timeline-back h3{
+
+    margin-bottom:16px;
+
+}
+
+
+
+.timeline-back p{
+
+    text-align:center;
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+                TARJETAS
+==================================================*/
+
+.timeline-card{
+
+    width:220px;
+
+    height:260px;
+
+    cursor:pointer;
+
+    perspective:1200px;
+
+}
+
+
+
+.timeline-card-inner{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    transform-style:preserve-3d;
+
+    transition:transform .7s cubic-bezier(.22,.61,.36,1);
+
+}
+
+
+
+/*==================================================
+                    FLIP
+==================================================*/
+
+.timeline-card.active .timeline-card-inner{
 
     transform:rotateY(180deg);
+
+}
+
+
+
+/*==================================================
+                    CARAS
+==================================================*/
+
+.timeline-front,
+.timeline-back{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    border:1px solid rgba(0,0,0,.10);
+
+    background:var(--color-light);
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+
+    transition:border-color .35s;
+
+}
+
+
+
+/*==================================================
+                    FRENTE
+==================================================*/
+
+.timeline-front{
+
+    text-align:center;
+
+}
+
+
+
+.timeline-week{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+}
+
+
+
+/*==================================================
+                    DORSO
+==================================================*/
+
+.timeline-back{
+
+    transform:rotateY(180deg);
+
+    text-align:center;
 
 }
 
@@ -1161,56 +1447,67 @@ opacity:1;
 
 
 
-/*=========================================
-            ACTIVA
-=========================================*/
+/*==================================================
+                    HOVER
+==================================================*/
 
-.timeline-card.active .timeline-front{
+.timeline-card:hover{
 
-    opacity:0;
+    transform:translateY(-8px);
 
-    transform:rotateY(180deg);
-
-}
-
-
-
-.timeline-card.active .timeline-back{
-
-    opacity:1;
-
-    pointer-events:auto;
-
-    transform:rotateY(360deg);
+    transition:transform .35s ease;
 
 }
 
+
+
+.timeline-card:hover .timeline-front,
+
+.timeline-card:hover .timeline-back{
+
+    border-color:var(--color-primary);
+
+}
+
+.timeline-stop.visited{
+
+    background:var(--color-secondary);
+
+    color: var(--color-light);
+
+    border-color:var(--color-accent);
+
+}
+
+.timeline-stop.active{
+
+    background:var(--color-accent3);
+
+    color:var(--color-accent);
+
+}
 
 /*==================================================
                 COMPRAR CURSO
 ==================================================*/
 
-.course-buy{
+#inscri {
 
-    padding-block:140px;
+    padding-block: 140px;
 
 }
 
-
-
 .buy-card{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:2fr 1fr;
+    padding: 3rem;
 
-    gap:80px;
+    flex-direction: column;
 
-    border:1px solid rgba(0,0,0,.08);
+    gap: 1rem;
 
-    padding:70px;
-
-    background-color: var(--color-light);
+    background-color: var(--color-primary);
 
 }
 
@@ -1246,11 +1543,14 @@ opacity:1;
 
     flex-direction:column;
 
-    gap:18px;
+    gap:10px;
 
 }
 
+.buy-info li{
 
+    font-weight: 700;
+}
 
 .buy-price{
 
@@ -1261,8 +1561,6 @@ opacity:1;
     justify-content:center;
 
     align-items:flex-start;
-
-    padding-inline:40px;
 
 }
 
@@ -1285,32 +1583,25 @@ opacity:1;
 }
 
 .section-description3 {
-    color: var(--color-accent);
+    color: var(--color-accent3);
 }
 
 .buy-price h3{
 
     font-size:3.5rem;
 
-    color:var(--color-accent);
+    color:var(--color-accent3);
 
     margin-bottom:10px;
 
 }
 
-#inscri {
-    background-color: var(--color-accent2);
-}
-
 .buy-price p{
 
-    margin-bottom:40px;
+    margin-bottom:25px;
 
 }
 
-.buy-price {
-    background-color: var(--color-accent2);
-}
 
 
 
@@ -1437,23 +1728,5 @@ opacity:1;
     transform:scale(1.05);
 
 }
-
-
-
-
-
-/*==================================================
-                FAQ
-==================================================*/
-
-.faq{
-
-    padding-block:140px;
-    display: flex;
-    justify-content: center;
-
-
-}
-
 
 

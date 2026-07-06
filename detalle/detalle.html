@@ -62,19 +62,7 @@
                 <li class="nav-item">
 
                     <a
-                        href="#stats"
-                        class="nav-link">
-
-                        Concepto
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a
-                        href="#works"
+                        href="#showcase"
                         class="nav-link">
 
                         Personalización
@@ -122,7 +110,7 @@
                 <li class="nav-item">
 
                     <a
-                        href="#otroscursos"
+                        href="#courses"
                         class="nav-link">
 
                         Cursos 
@@ -161,12 +149,12 @@
 
 <section id="hero" class="course-hero">
 
-    <div class="container hero-grid">
+    <div class="container4 hero-grid">
 
 
         <!-- TEXTO -->
 
-        <div class="hero-content">
+        <div class="hero-content2">
 
             <p class="section-tag-hero depth-header">
 
@@ -177,9 +165,7 @@
 
             <h1 class="hero-title depth-content">
 
-                Color,
-                Tapizado
-                y Pintura
+                COLOR, TAPIZADO, PINTURA Y ESTILO
 
             </h1>
 
@@ -227,7 +213,7 @@
 
             <div class="hero-buttons">
 
-                <a href="#inscri" class="button button-primary">
+                <a href="#inscri" class="button button-secondary">
 
                     Reservar lugar
 
@@ -242,13 +228,27 @@
 
         <!-- IMAGEN -->
 
-        <div class="hero-image">
+<div class="detail-hero-visual">
 
-            <img
-                src="../imagenes/muebles/azul/sillon_azul.png"
-                alt="Curso de Color, Tapizado y Pintura">
+    <div class="detail-hero-circle"></div>
 
-        </div>
+    <div class="detail-hero-sofa">
+
+        <img
+            src="../imagenes/hero/hero_detalle.png"
+            alt="Curso de Color, Pintura y Tapizado">
+
+    </div>
+
+    <div class="detail-hero-japanese">
+
+        <span>色彩</span>
+        <span>塗装</span>
+        <span>張り地</span>
+
+    </div>
+
+</div>
 
 
     </div>
@@ -263,7 +263,7 @@
                 STATS
 ==========================================-->
 
-<section id="stats" class="course-stats">
+<section id="stats" class="course-stats reveal">
 
     <div class="container">
 
@@ -271,7 +271,7 @@
 
             <article class="stat-card">
 
-                <span class="stats-number">
+                <span class="stats-number reveal">
 
                     5
 
@@ -290,7 +290,7 @@
 
 
 
-            <article class="stat-card">
+            <article class="stat-card reveal">
 
                 <span class="stats-number">
 
@@ -311,7 +311,7 @@
 
 
 
-            <article class="stat-card">
+            <article class="stat-card reveal">
 
                 <span class="stats-number">
 
@@ -337,28 +337,32 @@
 </section>
 
 <!--=========================================
-        PERSONALIZACIÓN DEL PROYECTO
+            VISUALIZADOR DE MUEBLES
 ==========================================-->
 
-<section id="works" class="course-customization" id="personalizacion-curso">
+<section class="course-showcase reveal" id="showcase">
 
-    <div class="container container-per">
+    <div class="container2">
 
-        <div class="section-header">
+        <div class="showcase-header">
 
             <p class="section-tag">
+
                 Personalización
+
             </p>
 
-            <h2 class="section-title">
-                DISEÑÁ TU PROYECTO 
+            <h2 class="section-title"> 
+
+                MIRÁ CADA TRANSFORMACIÓN
+
             </h2>
 
-            <p class="section-description">
+            <p class="showcase-description">
 
-                Durante el curso aprenderás cómo combinar maderas,
-                colores y patrones japoneses para crear un mueble
-                completamente personalizado.
+                Seleccioná un mueble y descubrí cómo cambia según
+                las distintas combinaciones de madera, color y
+                tapizado trabajadas durante el curso.
 
             </p>
 
@@ -366,99 +370,32 @@
 
 
 
-        <div class="customization-slider">
+        <!--==================================
+                    TARJETAS
+        ===================================-->
 
+        <div class="showcase-grid reveal">
 
+            <!-- ROJO -->
 
+            <article class="showcase-card showcase-red reveal">
 
-            <!--=================================
-                    TARJETA MADERA
-            ==================================-->
-
-            <article class="course-card active" id="card-madera">
-
-                <!-- Frente -->
-
-                <div class="course-card-front">
+                <div class="showcase-image">
 
                     <img
-                        src="../imagenes/muebles/azul/sillon_azul.png"
-                        alt="Madera">
-
-                    <div class="course-card-title">
-
-                        <h3 class="stats-title" >Madera</h3>
-
-                        <span>
-                            Elegí el acabado
-                        </span>
-
-                    </div>
+                        id="showcase-red-image"
+                        src="../imagenes/muebles/azul/silla_azul_1.png"
+                        alt="Madera oscura">
 
                 </div>
 
+                <div class="showcase-info">
 
+                    <span class="showcase-label">
 
+                        Madera Oscura
 
-                <!-- Dorso -->
-
-                <div class="course-card-back">
-
-                    <img
-                        class="card-preview"
-                        src="../imagenes/muebles/azul/sillon_azul.png"
-                        alt="Madera">
-
-                    <div class="card-content">
-
-                        <h3 class="card-title">
-
-                            Nogal Oscuro
-
-                        </h3>
-
-                        <h4 class="card-subtitle">
-
-                            Acabado profundo
-
-                        </h4>
-
-                        <p class="card-description">
-
-                            Ideal para quienes buscan una estética
-                            tradicional con mucha presencia y
-                            contraste.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="selector-buttons">
-
-                        <button
-                            class="selector active"
-                            data-type="wood"
-                            data-index="0">
-
-                        </button>
-
-                        <button
-                            class="selector"
-                            data-type="wood"
-                            data-index="1">
-
-                        </button>
-
-                        <button
-                            class="selector"
-                            data-type="wood"
-                            data-index="2">
-
-                        </button>
-
-                    </div>
+                    </span>
 
                 </div>
 
@@ -466,92 +403,26 @@
 
 
 
+            <!-- AZUL -->
 
+            <article class="showcase-card showcase-blue reveal">
 
-
-            <!--=================================
-                    TARJETA COLOR
-            ==================================-->
-
-            <article class="course-card" id="card-color">
-
-                <div class="course-card-front">
+                <div class="showcase-image">
 
                     <img
-                        src="../imagenes/muebles/rojo/sillon_rojo.png"
-                        alt="Color">
-
-                    <div class="course-card-title">
-
-                        <h3>Color</h3>
-
-                        <span>
-                            Elegí el tapizado
-                        </span>
-
-                    </div>
+                        id="showcase-blue-image"
+                        src="../imagenes/muebles/rojo/silla_roja_1.png"
+                        alt="Madera clara">
 
                 </div>
 
+                <div class="showcase-info">
 
+                    <span class="showcase-label">
 
-                <div class="course-card-back">
+                        Madera Clara
 
-                    <img
-                        class="card-preview"
-                        src="../imagenes/muebles/rojo/sillon_rojo.png"
-                        alt="Color">
-
-                    <div class="card-content">
-
-                        <h3 class="card-title">
-
-                            Azul Índigo
-
-                        </h3>
-
-                        <h4 class="card-subtitle">
-
-                            Inspirado en Japón
-
-                        </h4>
-
-                        <p class="card-description">
-
-                            Un tono elegante que transmite calma
-                            y combina perfectamente con maderas
-                            oscuras.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="selector-buttons">
-
-                        <button
-                            class="selector active"
-                            data-type="color"
-                            data-index="0">
-
-                        </button>
-
-                        <button
-                            class="selector"
-                            data-type="color"
-                            data-index="1">
-
-                        </button>
-
-                        <button
-                            class="selector"
-                            data-type="color"
-                            data-index="2">
-
-                        </button>
-
-                    </div>
+                    </span>
 
                 </div>
 
@@ -559,99 +430,98 @@
 
 
 
+            <!-- VERDE -->
 
+            <article class="showcase-card showcase-green reveal">
 
-
-
-            <!--=================================
-                    TARJETA PATRÓN
-            ==================================-->
-
-            <article class="course-card" id="card-pattern">
-
-                <div class="course-card-front">
+                <div class="showcase-image">
 
                     <img
-                        src="../imagenes/muebles/dorado/sillon_dorado.png"
-                        alt="Patrón">
-
-                    <div class="course-card-title">
-
-                        <h3>Patrón</h3>
-
-                        <span>
-                            Elegí el diseño
-                        </span>
-
-                    </div>
+                        id="showcase-green-image"
+                        src="../imagenes//muebles/dorado/silla_dorado_1.png"
+                        alt="Madera Negra">
 
                 </div>
 
+                <div class="showcase-info">
 
+                    <span class="showcase-label">
 
-                <div class="course-card-back">
+                        Madera Negra
 
-                    <img
-                        class="card-preview"
-                        src="../imagenes/muebles/dorado/sillon_dorado.png"
-                        alt="Patrón">
-
-                    <div class="card-content">
-
-                        <h3 class="card-title">
-
-                            Kikko
-
-                        </h3>
-
-                        <h4 class="card-subtitle">
-
-                            Fortaleza y protección
-
-                        </h4>
-
-                        <p class="card-description">
-
-                            Inspirado en el caparazón de la tortuga,
-                            uno de los patrones tradicionales más
-                            representativos del arte japonés.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="selector-buttons selector-pattern">
-
-                        <button
-                            class="selector active"
-                            data-type="pattern"
-                            data-index="0">
-
-                        </button>
-
-                        <button
-                            class="selector"
-                            data-type="pattern"
-                            data-index="1">
-
-                        </button>
-
-                        <button
-                            class="selector"
-                            data-type="pattern"
-                            data-index="2">
-
-                        </button>
-
-                    </div>
+                    </span>
 
                 </div>
 
             </article>
 
+        </div>
 
+
+
+        <!--==================================
+                SELECTOR MUEBLES
+        ===================================-->
+
+        <div class="showcase-selector reveal">
+
+            <button
+                class="selector-item active"
+                data-furniture="chair">
+
+                <img
+                    src="../imagenes/muebles/viejos/silla_viejo.webp"
+                    alt="Silla">
+
+            </button>
+
+
+
+            <button
+                class="selector-item"
+                data-furniture="lamp">
+
+                <img
+                    src="../imagenes/muebles/viejos/lampara_viejo.webp"
+                    alt="Lámpara">
+
+            </button>
+
+
+
+            <button
+                class="selector-item"
+                data-furniture="table">
+
+                <img
+                    src="../imagenes/muebles/viejos/mesita_viejo.webp"
+                    alt="Mesa">
+
+            </button>
+
+
+
+            <button
+                class="selector-item"
+                data-furniture="shelf">
+
+                <img
+                    src="../imagenes/muebles/viejos/armario_viejo.webp"
+                    alt="Estantería">
+
+            </button>
+
+
+
+            <button
+                class="selector-item"
+                data-furniture="bench">
+
+                <img
+                    src="../imagenes/muebles/viejos/sillon_viejo.webp"
+                    alt="Banco">
+
+            </button>
 
         </div>
 
@@ -660,15 +530,11 @@
 </section>
 
 
-
-
-
-
 <!--=========================================
             QUÉ INCLUYE EL CURSO
 ==========================================-->
 
-<section id="program" class="course-content" id="contenido">
+<section id="program" class="course-content reveal" id="contenido">
 
     <div class="container">
 
@@ -690,33 +556,82 @@
 
                 <ul class="content-list">
 
-                    <li>Preparación y restauración de la madera.</li>
+    <li class="program-item active" data-program="1">
+        <span class="program-icon">✓</span>
+        <span>Preparación y restauración de la madera.</span>
+    </li>
 
-                    <li>Técnicas de pintura y aplicación.</li>
+    <li class="program-item" data-program="2">
+        <span class="program-icon">−</span>
+        <span>Técnicas de pintura y aplicación.</span>
+    </li>
 
-                    <li>Protección y acabados finales.</li>
+    <li class="program-item" data-program="3">
+        <span class="program-icon">−</span>
+        <span>Protección y acabados finales.</span>
+    </li>
 
-                    <li>Selección de telas y materiales.</li>
+    <li class="program-item" data-program="4">
+        <span class="program-icon">−</span>
+        <span>Selección de telas y materiales.</span>
+    </li>
 
-                    <li>Tapizado completo del asiento.</li>
+    <li class="program-item" data-program="5">
+        <span class="program-icon">−</span>
+        <span>Tapizado completo del asiento.</span>
+    </li>
 
-                    <li>Composición de colores y patrones japoneses.</li>
+    <li class="program-item" data-program="6">
+        <span class="program-icon">−</span>
+        <span>Composición de colores y patrones japoneses.</span>
+    </li>
 
-                    <li>Consejos de mantenimiento y conservación.</li>
+    <li class="program-item" data-program="7">
+        <span class="program-icon">−</span>
+        <span>Consejos de mantenimiento y conservación.</span>
+    </li>
 
-                </ul>
+</ul>
 
-            </div>
+</div>
 
 
 
             <div class="content-image">
 
-                <img
-                    src="../imagenes/fotogaleria/gale_6.png"
-                    alt="Contenido del curso">
+            <div class="program-gallery">
 
-            </div>
+        <div class="program-card active" data-program="1">
+            <img src="../imagenes/fotogaleria/gale_1.png" alt="">
+        </div>
+
+        <div class="program-card" data-program="2">
+            <img src="../imagenes/fotogaleria/gale_2.png" alt="">
+        </div>
+
+        <div class="program-card" data-program="3">
+            <img src="../imagenes/fotogaleria/gale_3.png" alt="">
+        </div>
+
+        <div class="program-card" data-program="4">
+            <img src="../imagenes/fotogaleria/gale_4.png" alt="">
+        </div>
+
+        <div class="program-card" data-program="5">
+            <img src="../imagenes/fotogaleria/gale_5.png" alt="">
+        </div>
+
+        <div class="program-card" data-program="6">
+            <img src="../imagenes/fotogaleria/gale_6.png" alt="">
+        </div>
+
+        <div class="program-card" data-program="7">
+            <img src="../imagenes/fotogaleria/gale_7.png" alt="">
+        </div>
+
+        </div>
+
+        </div>
 
         </div>
 
@@ -724,127 +639,107 @@
 
 </section>
 
+
 <!--=========================================
-        TIMELINE DEL CURSO
+            TIMELINE
 ==========================================-->
 
-<section id="crono" class="course-timeline">
+<section id="crono" class="course-timeline section reveal">
 
     <div class="container2">
 
         <div class="section-header">
 
             <p class="section-tag">
-
                 Cronograma
-
             </p>
 
             <h2 class="section-title">
-
-                5 SEMANAS DE TRABAJO 
-
+                5 SEMANAS DE TRABAJO
             </h2>
 
             <p class="section-description">
-
-                Cada encuentro desarrolla una etapa del proceso.
-                Al finalizar el curso habrás intervenido un proyecto
-                completo de principio a fin.
-
+                Cada encuentro desarrolla una etapa del proceso. Al finalizar el curso habrás intervenido un proyecto completo de principio a fin.
             </p>
 
         </div>
 
 
+        <!--==================================
+                LÍNEA + STOPS
+        ===================================-->
 
-        <div class="timeline-wrapper">
+        <div class="timeline-navigation reveal">
 
-            <div class="timeline-line"></div>
+            <div class="timeline-track">
+
+                <span class="timeline-segment" data-segment="1"></span>
+
+                <span class="timeline-segment" data-segment="2"></span>
+
+                <span class="timeline-segment" data-segment="3"></span>
+
+                <span class="timeline-segment" data-segment="4"></span>
+
+            </div>
 
 
+            <div class="timeline-stops">
 
+        <button class="timeline-stop" data-step="1"><span>一</span></button>
 
+        <button class="timeline-stop" data-step="2"><span>二</span></button>
 
-            <!-- SEMANA 1 -->
+        <button class="timeline-stop" data-step="3"><span>三</span></button>
 
-            <article class="timeline-card active">
+        <button class="timeline-stop" data-step="4"><span>四</span></button>
 
-                <div class="timeline-stop">
+        <button class="timeline-stop" data-step="5"><span>五</span></button>
 
-                    1
+            </div>
 
-                </div>
-
-                <div class="timeline-front">
-
-                    <span>
-
-                        Semana 1
-
-                    </span>
-
-                </div>
-
-                <div class="timeline-back">
-
-                    <h3>
-
-                        Preparación
-
-                    </h3>
-
-                    <p>
-
-                        Evaluación del mueble, desmontaje,
-                        lijado y preparación de todas las
-                        superficies.
-
-                    </p>
-
-                </div>
-
-            </article>
+    </div>
 
 
 
+        <!--==================================
+                TARJETAS
+        ===================================-->
+
+        <div class="timeline-cards reveal">
 
 
-            <!-- SEMANA 2 -->
+            <!-- Semana 1 -->
 
-            <article class="timeline-card">
+            <article class="timeline-card active" data-card="1">
 
-                <div class="timeline-stop">
+                <div class="timeline-card-inner">
 
-                    2
+                    <div class="timeline-front">
 
-                </div>
+                        <span class="timeline-week">
 
-                <div class="timeline-front">
+                            Semana 1
 
-                    <span>
+                        </span>
 
-                        Semana 2
+                    </div>
 
-                    </span>
+                    <div class="timeline-back">
 
-                </div>
+                        <h3>
 
-                <div class="timeline-back">
+                            Preparación
 
-                    <h3>
+                        </h3>
 
-                        Pintura
+                        <p>
 
-                    </h3>
+                            Evaluación del mueble, desmontaje, lijado y preparación de la madera.
 
-                    <p>
+                        </p>
 
-                        Técnicas de aplicación, cobertura,
-                        elección del color y corrección
-                        de imperfecciones.
-
-                    </p>
+                    </div>
 
                 </div>
 
@@ -853,42 +748,37 @@
 
 
 
+            <!-- Semana 2 -->
 
-            <!-- SEMANA 3 -->
+            <article class="timeline-card" data-card="2">
 
-            <article class="timeline-card">
+                <div class="timeline-card-inner">
 
-                <div class="timeline-stop">
+                    <div class="timeline-front">
 
-                    3
+                        <span class="timeline-week">
 
-                </div>
+                            Semana 2
 
-                <div class="timeline-front">
+                        </span>
 
-                    <span>
+                    </div>
 
-                        Semana 3
+                    <div class="timeline-back">
 
-                    </span>
+                        <h3>
 
-                </div>
+                            Pintura
 
-                <div class="timeline-back">
+                        </h3>
 
-                    <h3>
+                        <p>
 
-                        Acabados
+                            Técnicas de aplicación, elección del color y corrección de imperfecciones.
 
-                    </h3>
+                        </p>
 
-                    <p>
-
-                        Sellado, barnices, protección y
-                        terminaciones según el estilo
-                        elegido.
-
-                    </p>
+                    </div>
 
                 </div>
 
@@ -897,43 +787,37 @@
 
 
 
+            <!-- Semana 3 -->
 
+            <article class="timeline-card" data-card="3">
 
-            <!-- SEMANA 4 -->
+                <div class="timeline-card-inner">
 
-            <article class="timeline-card">
+                    <div class="timeline-front">
 
-                <div class="timeline-stop">
+                        <span class="timeline-week">
 
-                    4
+                            Semana 3
 
-                </div>
+                        </span>
 
-                <div class="timeline-front">
+                    </div>
 
-                    <span>
+                    <div class="timeline-back">
 
-                        Semana 4
+                        <h3>
 
-                    </span>
+                            Acabados
 
-                </div>
+                        </h3>
 
-                <div class="timeline-back">
+                        <p>
 
-                    <h3>
+                            Sellado, barnices, protección y terminaciones según el estilo elegido.
 
-                        Tapizado
+                        </p>
 
-                    </h3>
-
-                    <p>
-
-                        Selección de telas, espuma,
-                        tensión del tejido y montaje
-                        del asiento.
-
-                    </p>
+                    </div>
 
                 </div>
 
@@ -942,47 +826,81 @@
 
 
 
+            <!-- Semana 4 -->
 
+            <article class="timeline-card" data-card="4">
 
-            <!-- SEMANA 5 -->
+                <div class="timeline-card-inner">
 
-            <article class="timeline-card">
+                    <div class="timeline-front">
 
-                <div class="timeline-stop">
+                        <span class="timeline-week">
 
-                    5
+                            Semana 4
 
-                </div>
+                        </span>
 
-                <div class="timeline-front">
+                    </div>
 
-                    <span>
+                    <div class="timeline-back">
 
-                        Semana 5
+                        <h3>
 
-                    </span>
+                            Tapizados
 
-                </div>
+                        </h3>
 
-                <div class="timeline-back">
+                        <p>
 
-                    <h3>
+                            Selección de telas, espuma, tensión del tejido y montaje del asiento.
 
-                        Proyecto Final
+                        </p>
 
-                    </h3>
-
-                    <p>
-
-                        Ajustes finales, montaje,
-                        revisión y presentación del
-                        mueble terminado.
-
-                    </p>
+                    </div>
 
                 </div>
 
             </article>
+
+
+
+
+            <!-- Semana 5 -->
+
+            <article class="timeline-card" data-card="5">
+
+                <div class="timeline-card-inner">
+
+                    <div class="timeline-front">
+
+                        <span class="timeline-week">
+
+                            Semana 5
+
+                        </span>
+
+                    </div>
+
+                    <div class="timeline-back">
+
+                        <h3>
+
+                            Retoques finales
+
+                        </h3>
+
+                        <p>
+
+                            Ajustes finales, montaje, revisión y presentación del mueble terminado.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
 
         </div>
 
@@ -990,17 +908,11 @@
 
 </section>
 
-
-
-
-
-
-
 <!--=========================================
             COMPRAR CURSO
 ==========================================-->
 
-<section id="inscri" class="course-buy" id="comprar">
+<section id="inscri" class="course-buy reveal" id="comprar">
 
     <div class="container">
 
@@ -1030,15 +942,17 @@
 
                 <ul>
 
-                    <li>✔ 5 clases presenciales</li>
+                    <li>✔ 5 clases en persona que permiten aprender directamente con el docente y compartir experiencias con el grupo.</li>
 
-                    <li>✔ Material práctico</li>
+                    <li>✔ Cada encuentro dura 2 horas, el tiempo justo para profundizar en los temas sin perder dinamismo.</li>
 
-                    <li>✔ Herramientas disponibles</li>
+                    <li>✔ Se entrega material pensado para acompañar cada ejercicio y facilitar la práctica en clase.</li>
 
-                    <li>✔ Certificado de participación</li>
+                    <li>✔ Durante el curso se ponen a disposición las herramientas necesarias para realizar cada actividad.</li>
 
-                    <li>✔ Establecimiento seguro</li> 
+                    <li>✔ Al finalizar, se entrega un certificado que acredita tu recorrido y aprendizaje en el curso.</li>
+
+                    <li>✔ Las clases se dictan en un espacio cuidado y seguro, preparado para la comodidad de todos.</li> 
 
                 </ul>
 
@@ -1047,12 +961,6 @@
 
 
             <div class="buy-price">
-
-                <span class="price-title">
-
-                    Inversión
-
-                </span>
 
                 <h3>
 
@@ -1066,7 +974,7 @@
 
                 </p>
 
-                <a href="../index.html" class="button button-primary">
+                <a href="../index.html" class="button button-secondary">
 
                     Inscribirme
 
@@ -1082,167 +990,207 @@
 
 
 
+<!--==================================================
+                    CURSOS
+===================================================-->
 
-
-
-
-<!--=========================================
-            OTROS CURSOS
-==========================================-->
-
-<section id="otroscursos" class="related-courses">
-
-    <div class="container2">
-
-        <div class="section-header">
-
-            <p class="section-tag-otro">
-
-                Continuá aprendiendo
-
-            </p>
-
-            <h2 class="section-title3">
-
-                Descubrí nuestros otros cursos
-
-            </h2>
-
-        </div>
-
-
-
-        <div class="courses-grid">
-
-
-
-
-            <!-- RESTAURACIÓN -->
-
-            <article class="course-preview-card">
-
-                <img
-                    src="../imagenes/fotogaleria/gale_1.png"
-                    alt="Curso Restauración">
-
-                <div class="course-preview-content">
-
-                    <h3 class="card-title">
-
-                        Restauración
-                        Tradicional
-
-                    </h3>
-
-                    <p class="card-subtitle">
-
-                        Aprendé técnicas de reparación,
-                        recuperación y conservación de
-                        muebles antiguos.
-
-                    </p>
-
-                    <button class="button button-secondary">
-                                <a class="botonweb" href="../index.html">
-
-                                    Ver curso 
-
-                                </a>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-
-
-
-
-            <!-- DISEÑO -->
-
-            <article class="course-preview-card">
-
-                <img
-                    src="../imagenes/fotogaleria/gale_3.png"
-                    alt="Curso Diseño">
-
-                <div class="course-preview-content">
-
-                    <h3 class="card-title">
-
-                        Diseño de
-                        Mobiliario
-
-                    </h3>
-
-                    <p class="card-subtitle">
-
-                        Desde el boceto hasta la
-                        construcción de piezas
-                        originales.
-
-                    </p>
-
-                    <button class="button button-secondary">
-                                <a class="botonweb" href="../index.html">
-
-                                    Ver curso 
-
-                                </a>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-
-        </div>
+<section
+    id="courses"
+    class="section section-dark courses reveal">
 
     </div>
 
-</section>
+    <div class="container2 reveal">
 
-<!--=========================================
-                    FAQ
-==========================================-->
+        <div class="section-header reveal depth-header">
 
-<section class="faq" id="faq">
+            <span class="section-tag">
 
-    <div class="container2">
+                Continuá aprendiendo
 
-        <div class="section-header">
-
-            <p class="section-tag">
-                Preguntas frecuentes
-            </p>
+            </span>
 
             <h2 class="section-title">
-                Todo lo que necesitás saber
+
+                NUESTROS OTROS CURSOS
+
             </h2>
 
             <p class="section-description">
 
-                Si tenés alguna otra consulta,
-                podés comunicarte con nosotros
-                desde la sección de contacto.
+                Descubrí técnicas de restauración, pintura y tapizado inspiradas en la estética japonesa.
 
             </p>
 
         </div>
 
+        <div class="courses-grid reveal depth-content">
 
 
-        <div class="faq-container">
 
-            <article class="faq-item">
 
-                <button class="faq-question">
+<!--==================================================
+                    CURSO 01
+===================================================-->
 
-                    ¿Necesito experiencia previa?
+            <article
+                class="card course-card"
+                data-course="1">
 
-                    <span>+</span>
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <img
+                            src="imagenes/fotocursos/curso_1.webp"
+                            alt="Curso inicial"
+                            class="card-image course-image">
+
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content3">
+
+                            <span class="card-tag">
+
+                                RESTAURACIÓN
+
+                            </span>
+
+                            <h3 class="card-title">
+
+                                Diseñá la atmósfera
+
+                            </h3>
+
+                            <p class="card-subtitle">
+
+                                Almacenamiento y lámparas que cobran vida con color y rejillas japonesas.
+
+                            </p>
+
+                            <ul>
+                                <li class="listacartas">Explorás técnicas de tallado artesanal.</li>
+                                <li class="listacartas">Diseñás detalles únicos en superficies de madera.</li>
+                                <li class="listacartas">Transformás muebles en piezas de autor.</li>
+                            </ul>
+
+                            <h4>$95.000 ARS</h4> 
+
+                            <button class="button button-secondary">
+                                <a href="detalle/detalle.html">Ver curso</a>  
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+<!--==================================================
+                    CURSO 02
+===================================================-->
+
+            <article
+                class="card course-card"
+                data-course="3">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+                        <img
+                            src="imagenes/fotocursos/curso_3.webp"
+                            alt="Curso profesional"
+                            class="card-image course-image">
+
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content3">
+
+                            <span class="card-tag">
+
+                                TALLADO
+
+                            </span>
+
+                            <h3 class="card-title">
+
+                                Tallado con carácter
+
+                            </h3>
+
+                            <p class="card-subtitle">
+
+                                Grabado artesanal que convierte cada superficie en una pieza única.
+
+                            </p>
+
+                            <ul>
+                                <li class="listacartas">Explorás técnicas de tallado artesanal.</li>
+                                <li class="listacartas">Detalles únicos en superficies de madera.</li>
+                                <li class="listacartas">Transformás muebles en piezas de autor.</li>
+                            </ul>
+
+                            <h4>$55.000 ARS</h4>  
+
+                            <button class="button button-secondary">
+                                <a href="detalle/detalle.html">Ver curso</a>  
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================================================
+                        FAQ
+===================================================-->
+
+<section
+    id="faq"
+    class="section faq reveal">
+
+    <div class="container2 reveal">
+
+        <div class="section-header reveal depth-header">
+
+            <span class="section-tag">
+
+                PREGUNTAS FRECUENTES
+
+            </span>
+
+            <h2 class="section-title">
+
+                TODO LO QUE NECESITAS SABER 
+
+            </h2>
+
+        </div>
+
+        <div class="faq-list reveal depth-content">
+
+            <article class="faq-item active">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>¿Qué materiales están incluidos durante el curso?</span>
+
+                    <span class="faq-icon">+</span>
 
                 </button>
 
@@ -1250,10 +1198,7 @@
 
                     <p>
 
-                        No. El curso está pensado para
-                        personas que comienzan desde cero
-                        y también para quienes desean
-                        perfeccionar técnicas.
+                        Todas las herramientas y materiales necesarios para realizar las prácticas durante las clases están incluidos. Si luego querés continuar trabajando en casa, también te orientaremos sobre dónde conseguir cada material y qué opciones recomendamos.
 
                     </p>
 
@@ -1263,15 +1208,15 @@
 
 
 
-
-
             <article class="faq-item">
 
-                <button class="faq-question">
+                <button
+                    class="faq-question"
+                    type="button">
 
-                    ¿Los materiales están incluidos?
+                    <span>¿Me llevo el mueble terminado?</span>
 
-                    <span>+</span>
+                    <span class="faq-icon">+</span>
 
                 </button>
 
@@ -1279,9 +1224,7 @@
 
                     <p>
 
-                        Durante las clases dispondrás de
-                        herramientas y materiales para
-                        realizar las prácticas propuestas.
+                        Sí. Durante el curso trabajarás sobre un proyecto completo y al finalizar podrás llevarte tu mueble restaurado, pintado y tapizado como resultado del aprendizaje realizado en clase.
 
                     </p>
 
@@ -1291,15 +1234,15 @@
 
 
 
-
-
             <article class="faq-item">
 
-                <button class="faq-question">
+                <button
+                    class="faq-question"
+                    type="button">
 
-                    ¿Puedo llevar mi propio mueble?
+                    <span>¿Recibo un certificado al finalizar?</span>
 
-                    <span>+</span>
+                    <span class="faq-icon">+</span>
 
                 </button>
 
@@ -1307,36 +1250,7 @@
 
                     <p>
 
-                        Sí. En las últimas clases podrás
-                        aplicar las técnicas aprendidas
-                        sobre un proyecto personal.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-
-
-            <article class="faq-item">
-
-                <button class="faq-question">
-
-                    ¿Se entrega certificado?
-
-                    <span>+</span>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-
-                        Sí. Al finalizar el curso recibirás
-                        un certificado de participación.
+                        Sí. Una vez completado el curso recibirás un certificado de participación que acredita los conocimientos y las técnicas aprendidas durante la capacitación.
 
                     </p>
 
@@ -1349,8 +1263,6 @@
     </div>
 
 </section>
-
-
 
 
 
@@ -1457,9 +1369,9 @@
                 SCRIPTS
 ==========================================-->
 
-<script src="js/script.js"></script>
+<script src="../script.js"></script>
 
-<script src="js/detalle.js"></script>
+<script src="detalle.js"></script> 
 
 </body>
 
