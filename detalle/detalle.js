@@ -17,41 +17,41 @@ const furniture = {
 
     chair:{
 
-        red:"../imagenes/showcase/silla_roja.png",
-        blue:"../imagenes/showcase/silla_azul.png",
-        green:"../imagenes/showcase/silla_verde.png"
+        red:"../imagenes/muebles/colores/banquito_1.webp",
+        blue:"../imagenes/muebles/colores/banquito_2.webp",
+        green:"../imagenes/muebles/colores/banquito_3.webp"
 
     },
 
     lamp:{
 
-        red:"../imagenes/showcase/lampara_roja.png",
-        blue:"../imagenes/showcase/lampara_azul.png",
-        green:"../imagenes/showcase/lampara_verde.png"
+        red:"../imagenes/muebles/colores/perchero_1.webp",
+        blue:"../imagenes/muebles/colores/perchero_2.webp",
+        green:"../imagenes/muebles/colores/perchero_3.webp"
 
     },
 
     table:{
 
-        red:"../imagenes/showcase/mesa_roja.png",
-        blue:"../imagenes/showcase/mesa_azul.png",
-        green:"../imagenes/showcase/mesa_verde.png"
+        red:"../imagenes/muebles/colores/mesita_1.webp",
+        blue:"../imagenes/muebles/colores/mesita_2.webp",
+        green:"../imagenes/muebles/colores/mesita_3.webp"
 
     },
 
     shelf:{
 
-        red:"../imagenes/showcase/estanteria_roja.png",
-        blue:"../imagenes/showcase/estanteria_azul.png",
-        green:"../imagenes/showcase/estanteria_verde.png"
+        red:"../imagenes/muebles/colores/armario_1.webp",
+        blue:"../imagenes/muebles/colores/armario_2.webp",
+        green:"../imagenes/muebles/colores/armario_3.webp"
 
     },
 
     bench:{
 
-        red:"../imagenes/showcase/banco_rojo.png",
-        blue:"../imagenes/showcase/banco_azul.png",
-        green:"../imagenes/showcase/banco_verde.png"
+        red:"../imagenes/muebles/colores/estante_1.webp",
+        blue:"../imagenes/muebles/colores/estante_2.webp",
+        green:"../imagenes/muebles/colores/estante_3.webp" 
 
     }
 
@@ -242,6 +242,7 @@ if(timelineStops.length){
 const programCards = document.querySelectorAll(".program-card");
 const programItems = document.querySelectorAll(".program-item");
 const programIcons = document.querySelectorAll(".program-icon");
+const galleryDots = document.querySelectorAll(".gallery-dot");
 
 let currentProgram = 0;
 
@@ -265,7 +266,6 @@ function updateProgramGallery(){
     });
 
 
-
     programItems.forEach(item=>{
 
         item.classList.remove("active");
@@ -280,6 +280,11 @@ function updateProgramGallery(){
 
     });
 
+    galleryDots.forEach(dot=>{
+
+    dot.classList.remove("active");
+
+    });
 
 
     const prev =
@@ -317,6 +322,8 @@ function updateProgramGallery(){
 
 
     programItems[currentProgram].classList.add("active");
+
+    galleryDots[currentProgram].classList.add("active");
 
     programIcons[currentProgram].textContent="✓";
 
@@ -399,3 +406,139 @@ faqItems.forEach(item => {
     });
 
 });
+
+/*==================================================
+        COLOR Y TAPIZADO
+==================================================*/
+
+const styleSection = document.querySelector(".detail-style");
+const styleBackground = document.querySelector(".detail-style-background");
+const styleSofa = document.getElementById("style-sofa");
+const styleKanji = document.getElementById("style-kanji");
+const styleCircle = document.querySelector(".detail-style .detail-hero-circle");
+
+const styleButtons = document.querySelectorAll(".detail-style-btn");
+
+let styleTimeout;
+
+
+/*------------------------------------------
+            Cambiar estilo
+------------------------------------------*/
+
+function changeStyle(style){
+
+    clearTimeout(styleTimeout);
+
+    styleSofa.classList.add("is-changing");
+
+    setTimeout(()=>{
+
+        switch(style){
+
+            case "red":
+
+                styleSofa.src="../imagenes/hero/sillon_1.webp"; 
+                styleBackground.style.backgroundImage="url('../imagenes/fotocursos/flores_1.webp')";
+                styleBackground.style.opacity="1";
+
+                styleCircle.style.background =
+                "linear-gradient(to top,#e8d8bd00 0%, #562F2F 100%)"; 
+
+                styleKanji.innerHTML="赤色";
+                styleKanji.style.color="#562F2F";
+
+            break;
+
+
+            case "blue":
+
+                styleSofa.src="../imagenes/hero/sillon_2.webp";
+                styleBackground.style.backgroundImage="url('../imagenes/fotocursos/flores_2.webp')";
+                styleBackground.style.opacity="1";
+
+                styleCircle.style.background =
+                "linear-gradient(to top,#e8d8bd00 0%, #2F4656 100%)";
+
+                styleKanji.innerHTML="青色";
+                styleKanji.style.color="#2F4656";
+
+            break;
+
+
+            case "green":
+
+                styleSofa.src="../imagenes/hero/sillon_3.webp";
+                styleBackground.style.backgroundImage="url('../imagenes/fotocursos/flores_3.webp')";
+                styleBackground.style.opacity="1";
+
+                styleCircle.style.background =
+                "linear-gradient(to top,#e8d8bd00 0%, #35562F 100%)";
+
+                styleKanji.innerHTML="緑色";
+                styleKanji.style.color="#35562F";
+
+            break;
+
+
+            default:
+
+                styleSofa.src="../imagenes/hero/sillon_detalle.webp";
+
+                styleBackground.style.opacity="0";
+
+                styleCircle.style.background =
+                "linear-gradient(to top,#EAE3D500 0%, #FF6A4F 100%)";
+
+                styleKanji.innerHTML="家具";
+                styleKanji.style.color="#EAE3D5";
+
+            break;
+
+        }
+
+        styleSofa.classList.remove("is-changing");
+
+    },250);
+
+
+
+
+    styleButtons.forEach(btn=>{
+
+        btn.classList.remove("active");
+
+    });
+
+    document.querySelector(`[data-style="${style}"]`).classList.add("active");
+
+
+
+    if(style!="default"){
+
+        styleTimeout=setTimeout(()=>{
+
+            changeStyle("default");
+
+        },15000);
+
+    }
+
+}
+
+
+
+/*------------------------------------------
+            Eventos
+------------------------------------------*/
+
+styleButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        changeStyle(button.dataset.style);
+
+    });
+
+});
+
