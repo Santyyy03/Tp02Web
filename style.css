@@ -234,7 +234,7 @@ section{
 
     flex-direction: column;
 
-    max-width: 1750px;
+    max-width: 1620px; 
 
 
 }
@@ -292,7 +292,7 @@ section{
 
     font-weight:var(--fw-semibold);
 
-    line-height:1;
+    line-height:1.1;
 
 
 }
@@ -431,7 +431,7 @@ section{
 
     flex-direction:column;
 
-    gap:var(--space-8);
+    gap:var(--space-16);
 
     margin-bottom:var(--space-32); 
 
@@ -479,8 +479,6 @@ section{
 
 .button:hover{
 
-    transform:translateY(-4px) scale(1.02);
-
     box-shadow:var(--shadow-md);
 
 }
@@ -502,6 +500,8 @@ section{
     border-color:var(--color-accent);
 
     background-color: var(--color-accent3);
+
+    transform:translateY(-4px) scale(1.02);
 
 }
 
@@ -672,6 +672,10 @@ section{
 
     bottom:0;
 
+    width:100%;
+
+    padding:28px;
+
     display:flex;
 
     flex-direction:column;
@@ -683,6 +687,144 @@ section{
     background-color: var(--color-primary);
 
     padding: 2rem; 
+
+    color:var(--color-light);
+
+    transition:
+        transform .45s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.course-extra{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    transition:
+
+        max-height .45s ease,
+
+        opacity .35s ease;
+
+}
+
+
+.course-card:not(.is-flipped):hover .course-extra{
+
+    max-height:300px;
+
+    opacity:1;
+
+}
+
+
+.course-image{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center center;
+
+    transition:
+        transform .45s cubic-bezier(.22,.61,.36,1),
+        object-position .45s cubic-bezier(.22,.61,.36,1),
+        filter .45s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.course-card:not(.is-flipped):hover .course-image{
+
+    transform:scale(1.06);
+
+    object-position:center 35%;
+
+    filter:brightness(.88);
+
+}
+
+.course-image-wrapper{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    transition:height .45s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.course-card:not(.is-flipped):hover .course-image-wrapper{
+
+    height:60%;
+
+}
+
+.course-professor-image-wrapper{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    transition:height .45s cubic-bezier(.22,.61,.36,1);
+
+}
+
+
+
+.course-professor-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:
+        max-height .45s ease,
+        opacity .35s ease;
+
+}
+
+.course-professor-back:hover .course-professor-content{
+
+    max-height:500px;
+
+    opacity:1;
+
+}
+
+.course-professor-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem; 
+    font-weight: var(--fw-bold);
+}
+
+.course-professor-speciality {
+    font-weight: var(--fw-bold);
+}
+
+.course-card:hover .course-image{
+
+    transform:scale(1.10);
+
+}
+
+.card-content3{
+
+    box-shadow:
+
+        0 -25px 45px rgba(0,0,0,.18);
 
 }
 
@@ -706,9 +848,32 @@ section{
 
     justify-content:flex-end;
 
-    gap:18px;
+    gap:15px; 
 
-    padding:20px;
+    padding:2rem;
+
+}
+
+.course-professor-return {
+    color: var(--color-light);
+}
+
+.course-professor-return:hover {
+    color: var(--color-accent);
+}
+
+.course-professor-btn {
+    color: var(--color-dark);
+}
+
+.course-professor-btn:hover {
+    color: var(--color-accent);
+}
+
+.card-texto-atras {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
 
 }
 
@@ -1347,6 +1512,25 @@ p.concept-text-dark {
 
 }
 
+.works-grid2{
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:0;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,300px); 
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:28px;
+
+}
 
 .work-card{
 
@@ -1490,7 +1674,7 @@ p.concept-text-dark {
     
     align-items:center;
 
-    gap: 100px;
+    gap: 75px;  
 
     width: 1750px;
 
@@ -1820,7 +2004,14 @@ p.concept-text-dark {
 
 }
 
-.course-card:hover{
+.course-card{
+
+    overflow:hidden;
+    position:relative;
+
+}
+
+.course-card:not(.is-flipped):hover{
 
     transform:
         translateY(-10px)
@@ -1857,6 +2048,18 @@ p.concept-text-dark {
 .course-card .card-number{
 
     color:var(--color-dark);
+
+}
+
+.course-card.is-flipped{
+
+    z-index:20;
+
+}
+
+.course-card.is-flipped .card-front{
+
+    pointer-events:none;
 
 }
 
@@ -2502,6 +2705,411 @@ section.stats {
 
 }
 
+/*=========================================
+            TALLADO
+=========================================*/
+
+.engraving-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+}
+
+
+
+/*=========================================
+            TEXTO
+=========================================*/
+
+.engraving-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:24px;
+
+    max-width:525px; 
+
+}
+
+.engraving-tag{
+
+    color:var(--color-accent3);
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.engraving-title{
+
+    font-family:var(--font-display);
+
+    font-size:clamp(2.6rem,4vw,4rem);
+
+    line-height:1.05;
+
+}
+
+.engraving-description{
+
+    line-height:1.8;
+
+    max-width:470px;
+
+}
+
+.engraving-footer{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+
+    align-items: flex-end;
+
+
+}
+
+.engraving-step{
+
+    font-size:4rem;
+
+    color:var(--color-tertiary);
+
+
+}
+
+
+
+/*=========================================
+            VISOR
+=========================================*/
+
+.engraving-viewer{
+
+    position:relative;
+
+    width:420px;
+
+    height:480px; 
+
+    margin-inline:auto;
+
+    overflow:hidden;
+
+    border:1px solid rgba(20,12,0,.12);
+
+    box-shadow:var(--shadow-sm); 
+
+    background:#ddd;
+
+    user-select:none;
+
+}
+
+
+
+/*=========================================
+            IMÁGENES
+=========================================*/
+
+.engraving-before,
+
+.engraving-after{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    pointer-events:none;
+
+}
+
+.engraving-before{
+
+    z-index:1;
+
+}
+
+.engraving-reveal{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    overflow:hidden;
+
+}
+
+.engraving-after{
+
+    z-index:2;
+
+    clip-path:inset(0 0 50% 0);
+
+    transition:none;
+
+}
+
+
+
+/*=========================================
+            DIVISOR
+=========================================*/
+
+.engraving-line{
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    width:100%;
+
+    height:3px;
+
+    background:white;
+
+    transform:translateY(-50%);
+
+    z-index:4;
+
+    pointer-events:none;
+
+}
+
+
+
+/*=========================================
+            HANDLE
+=========================================*/
+
+.engraving-handle{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--color-accent);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:grab;
+
+    z-index:5;
+
+    font-size:1.1rem;
+
+    font-weight:bold;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+.engraving-handle:hover{
+
+    transform:translate(-50%,-50%) scale(1.08);
+
+}
+
+.engraving-handle:active{
+
+    cursor:grabbing;
+
+}
+
+.engraving-handle{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:48px;
+    height:48px;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--color-accent);
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:2px;
+
+    cursor:grab;
+
+    z-index:5;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+.engraving-handle:hover{
+
+    transform:translate(-50%,-50%) scale(1.08);
+
+}
+
+.arrow-up,
+.arrow-down{
+
+    font-size:.65rem;
+
+    line-height:1;
+
+    transition:transform .25s ease;
+
+}
+
+.engraving-handle:hover .arrow-up{
+
+    transform:translateY(-2px);
+
+}
+
+.engraving-handle:hover .arrow-down{
+
+    transform:translateY(2px);
+
+}
+
+
+/*==================================================
+                KANJIS PERSONALIZACIÓN
+==================================================*/
+
+.custom-kanji{
+
+    position:absolute;
+
+    color: #562F2F;
+
+    writing-mode:vertical-rl;
+
+    text-orientation:upright;
+
+    font-family: var(--font-japanese);
+
+    font-weight: 900;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    transition:
+
+        color .45s ease,
+        opacity .45s ease,
+        transform .45s ease;
+
+}
+
+.custom-kanji-top{
+
+    top:75px;
+
+    right:-75px;
+
+    font-size:3rem;
+
+
+}
+
+.custom-kanji-bottom{
+
+    bottom:75px;
+
+    left:-75px;
+
+    font-size:3rem;
+
+
+}
+
+/*==================================================
+                KANJI TALLADO
+==================================================*/
+
+.wood-kanji{
+
+    position:absolute;
+
+    right:325px;
+
+    transform:translateY(-50%);
+
+    writing-mode:vertical-rl;
+
+    text-orientation:upright;
+
+    font-family: var(--font-japanese);
+
+    font-size:1.5rem;
+
+    color:var(--color-dark);
+
+    letter-spacing:10px;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
 
 /*==================================================
                     RESPONSIVE

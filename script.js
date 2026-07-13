@@ -428,13 +428,20 @@ workCards.forEach(card => {
                 PERSONALIZACIÓN
 ==================================================*/
 
-
+const colorKanji = document.getElementById("color-kanji");
+const conceptKanji = document.getElementById("concept-kanji");
 const customizationData = {
 
     blue: {
 
         image: "imagenes/muebles/azul/silla_azul_1.png",
-        color: "#562F2F",
+        color: "#562F2F", 
+        kanjis:{
+
+        color:"赤色",
+        concept:"静か"
+
+        },       
 
         cards: [
 
@@ -446,8 +453,8 @@ const customizationData = {
 
             {
                 label: "PALETA",
-                title: "Azul Índigo",
-                text: "Inspirado en los tonos tradicionales japoneses para transmitir calma y profundidad."
+                title: "Rojo tierra",
+                text: "Un tono profundo que evoca fuerza y carácter artesanal."
             },
 
             {
@@ -470,6 +477,12 @@ const customizationData = {
 
         image: "imagenes/muebles/rojo/silla_roja_1.png",
         color: "#2F4656",
+        kanjis:{
+
+        color:"青色",
+        concept:"個性"
+
+        },
 
         cards: [
 
@@ -481,8 +494,8 @@ const customizationData = {
 
             {
                 label: "PALETA",
-                title: "Rojo Carmesí",
-                text: "Inspirado en los tradicionales torii japoneses."
+                title: "Azul bosque",
+                text: "Inspirado en la calma de la naturaleza, transmite serenidad y equilibrio."
             },
 
             {
@@ -504,7 +517,13 @@ const customizationData = {
     gold: {
 
         image: "imagenes/muebles/dorado/silla_dorado_1.png",
-        color: "#35562F ",
+        color: "#35562F",
+        kanjis:{
+
+        color:"緑色",
+        concept:"調和"
+
+        },
 
         cards: [
 
@@ -516,8 +535,8 @@ const customizationData = {
 
             {
                 label: "PALETA",
-                title: "Dorado Arena",
-                text: "Una paleta cálida inspirada en la naturaleza japonesa."
+                title: "Verde raíz",
+                text: "Un matiz orgánico que conecta con lo vivo y lo esencial."
             },
 
             {
@@ -537,7 +556,6 @@ const customizationData = {
     }
 
 };
-
 
 
 function updateCards(data){
@@ -580,6 +598,11 @@ function changeCustomization(color){
 
         customizationImage.src = data.image;
         customizationCircle.style.background = data.color;
+        colorKanji.textContent = data.kanjis.color;
+conceptKanji.textContent = data.kanjis.concept;
+
+colorKanji.style.color = data.color;
+conceptKanji.style.color = data.color;
 
         updateCards(data);
 
@@ -881,3 +904,132 @@ window.addEventListener("load",updateDepthParallax);
 
 window.addEventListener("resize",updateDepthParallax);
 
+/*==================================================
+                TALLADO
+==================================================*/
+
+const viewer = document.querySelector(".engraving-viewer");
+const handle = document.querySelector(".engraving-handle");
+const line = document.querySelector(".engraving-line");
+const afterImage = document.querySelector(".engraving-after");
+
+let dragging = false;
+
+/*------------------------------------------
+            Actualizar Slider
+------------------------------------------*/
+
+function updateSlider(clientY){
+
+    const rect = viewer.getBoundingClientRect();
+
+    let y = clientY - rect.top;
+
+    y = Math.max(0, Math.min(rect.height, y));
+
+    const percentage = (y / rect.height) * 100;
+
+    /* Revelar imagen superior */
+
+    afterImage.style.clipPath = `inset(0 0 ${100 - percentage}% 0)`;
+
+    /* Línea */
+
+    line.style.top = `${percentage}%`;
+
+    /* Botón */
+
+    handle.style.top = `${percentage}%`;
+
+}
+
+/*------------------------------------------
+            Mouse
+------------------------------------------*/
+
+handle.addEventListener("mousedown", () => {
+
+    dragging = true;
+
+    document.body.style.userSelect = "none";
+
+});
+
+window.addEventListener("mousemove", (e) => {
+
+    if(!dragging) return;
+
+    updateSlider(e.clientY);
+
+});
+
+window.addEventListener("mouseup", () => {
+
+    dragging = false;
+
+    document.body.style.userSelect = "";
+
+});
+
+/*------------------------------------------
+            Touch
+------------------------------------------*/
+
+handle.addEventListener("touchstart", () => {
+
+    dragging = true;
+
+}, { passive:true });
+
+window.addEventListener("touchmove", (e) => {
+
+    if(!dragging) return;
+
+    updateSlider(e.touches[0].clientY);
+
+}, { passive:true });
+
+window.addEventListener("touchend", () => {
+
+    dragging = false;
+
+});
+
+/*------------------------------------------
+            Estado inicial
+------------------------------------------*/
+
+afterImage.style.clipPath = "inset(0 0 50% 0)";
+line.style.top = "50%";
+handle.style.top = "50%";
+
+/*------------------------------------------
+        COURSE CARDS FLIP
+------------------------------------------*/
+
+const courseCards = document.querySelectorAll(".course-card");
+
+courseCards.forEach((card) => {
+
+    const openBtn = card.querySelector(".course-professor-btn");
+    const closeBtn = card.querySelector(".course-professor-return");
+
+    openBtn.addEventListener("click", (e) => {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        card.classList.add("is-flipped");
+
+    });
+
+    closeBtn.addEventListener("click", (e) => {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        card.classList.remove("is-flipped");
+
+    });
+
+});
